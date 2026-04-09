@@ -1,0 +1,2444 @@
+<!DOCTYPE html>
+<html lang="id" data-color="sky" data-mode="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kalender Dinas 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ══════════════════════════════════════
+   COLOR THEMES — set on <html data-color>
+══════════════════════════════════════ */
+[data-color="sky"] {
+  --acc-rgb:91,159,192;
+  --pagi:#5b9fc0;  --pagi-l:#eef6fb;  --pagi-m:#b8d9ed;
+  --acc:#5b9fc0;   --acc2:#4a8fb0;
+  --bg:#f4f7fa;    --bg2:#e8eef4;     --surf:#fafcff;   --surf2:#eef3f8;
+  --bord:#d8e4ee;  --bord2:#c4d4e4;
+  --txt:#1e2d3a;   --txt2:#5a7080;    --txt3:#98b0c0;
+  --hd-grad:linear-gradient(160deg,#c8e8f8 0%,#a8d4ee 35%,#d0c8e8 70%,#eed8c8 100%);
+  --hs1:#7ec4e8;   --hs2:#c8b0d8;     --hs3:#f0d0a8;
+  --b1c:#b8ddf0;   --b1d:#8ec8e8;
+  --b2c:#e8d8f0;   --b2d:#d4c0e8;
+  --b3c:#fde8d8;   --b3d:#f5d0b8;
+  --hd-txt:#1a2e3e;
+  --sh:0 2px 16px rgba(30,45,58,.06); --sh2:0 8px 36px rgba(30,45,58,.11); --sh3:0 24px 64px rgba(30,45,58,.15);
+}
+[data-color="sage"] {
+  --acc-rgb:122,158,126;
+  --pagi:#7a9e7e;  --pagi-l:#f0f5f0;  --pagi-m:#c8ddc9;
+  --acc:#7a9e7e;   --acc2:#6a8e6e;
+  --bg:#f5f7f3;    --bg2:#e8ede5;     --surf:#fafdf9;   --surf2:#eef3eb;
+  --bord:#d8e4d4;  --bord2:#c4d4bf;
+  --txt:#1e2d1e;   --txt2:#5a7058;    --txt3:#98b090;
+  --hd-grad:linear-gradient(160deg,#cce8cc 0%,#b0d8b4 35%,#dcd0e8 70%,#eee0c8 100%);
+  --hs1:#a8d5a2;   --hs2:#c8b0d8;     --hs3:#f0c8a0;
+  --b1c:#c8e6ca;   --b1d:#a5d6a7;
+  --b2c:#e8d8f0;   --b2d:#d4c0e8;
+  --b3c:#fde8d8;   --b3d:#f5d0b8;
+  --hd-txt:#1a2e1a;
+  --sh:0 2px 16px rgba(30,45,30,.06); --sh2:0 8px 36px rgba(30,45,30,.11); --sh3:0 24px 64px rgba(30,45,30,.15);
+}
+[data-color="rose"] {
+  --acc-rgb:196,127,138;
+  --pagi:#c47f8a;  --pagi-l:#fdf0f2;  --pagi-m:#edccd0;
+  --acc:#c47f8a;   --acc2:#b46a78;
+  --bg:#faf5f6;    --bg2:#f2e8ea;     --surf:#fffafe;   --surf2:#f8eef0;
+  --bord:#ead8db;  --bord2:#dac4c8;
+  --txt:#2d1e22;   --txt2:#7a5a62;    --txt3:#b89098;
+  --hd-grad:linear-gradient(160deg,#f8d4da 0%,#f0b8c4 35%,#e8c8e0 70%,#f4e0c8 100%);
+  --hs1:#f0a8b8;   --hs2:#d8b0d0;     --hs3:#f8d8b0;
+  --b1c:#f8d4da;   --b1d:#f0b8c4;
+  --b2c:#ead4e8;   --b2d:#d8b8d4;
+  --b3c:#fde8d8;   --b3d:#f5d0b8;
+  --hd-txt:#2d1a20;
+  --sh:0 2px 16px rgba(45,30,34,.06); --sh2:0 8px 36px rgba(45,30,34,.11); --sh3:0 24px 64px rgba(45,30,34,.15);
+}
+[data-color="lavender"] {
+  --acc-rgb:139,120,196;
+  --pagi:#8b78c4;  --pagi-l:#f2f0fb;  --pagi-m:#cdc5ec;
+  --acc:#8b78c4;   --acc2:#7a68b4;
+  --bg:#f6f5fa;    --bg2:#eceaf4;     --surf:#fbfaff;   --surf2:#f0eef8;
+  --bord:#dcd8ee;  --bord2:#ccc4e4;
+  --txt:#1e1a30;   --txt2:#5a5880;    --txt3:#9890c0;
+  --hd-grad:linear-gradient(160deg,#dcd4f4 0%,#c8c0ec 35%,#e4c8e8 70%,#eedcc8 100%);
+  --hs1:#b8a8e0;   --hs2:#d8b0d8;     --hs3:#f0d0a8;
+  --b1c:#dcd4f4;   --b1d:#c8c0ec;
+  --b2c:#e8d4f0;   --b2d:#d8b8e4;
+  --b3c:#fde8d8;   --b3d:#f5d0b8;
+  --hd-txt:#1a183a;
+  --sh:0 2px 16px rgba(30,26,48,.06); --sh2:0 8px 36px rgba(30,26,48,.11); --sh3:0 24px 64px rgba(30,26,48,.15);
+}
+[data-color="terra"] {
+  --acc-rgb:184,106,66;
+  --pagi:#b86a42;  --pagi-l:#faf2ee;  --pagi-m:#e8c4b0;
+  --acc:#b86a42;   --acc2:#a85a32;
+  --bg:#faf5f1;    --bg2:#f0e8e0;     --surf:#fffdfb;   --surf2:#f5ede6;
+  --bord:#e4d4c8;  --bord2:#d4c0b0;
+  --txt:#2d1e14;   --txt2:#7a5a48;    --txt3:#b89880;
+  --hd-grad:linear-gradient(160deg,#f0d0b8 0%,#e8b898 35%,#dcc8b8 70%,#e8d8b0 100%);
+  --hs1:#e0a888;   --hs2:#c8b0a0;     --hs3:#f0d8a0;
+  --b1c:#f0d0b8;   --b1d:#e8b898;
+  --b2c:#e8d0c0;   --b2d:#d8b8a8;
+  --b3c:#fce8c8;   --b3d:#f4d0a8;
+  --hd-txt:#2d1a10;
+  --sh:0 2px 16px rgba(45,30,20,.06); --sh2:0 8px 36px rgba(45,30,20,.11); --sh3:0 24px 64px rgba(45,30,20,.15);
+}
+
+/* ══ DARK MODE ══ */
+[data-mode="dark"] {
+  --bg:#16181e !important; --bg2:#1e2028 !important; --surf:#252830 !important; --surf2:#2e3140 !important;
+  --bord:#383c50 !important; --bord2:#484d64 !important;
+  --txt:#e8eaf8 !important; --txt2:#8890b8 !important; --txt3:#505878 !important;
+  --sh:0 2px 16px rgba(0,0,0,.22) !important; --sh2:0 8px 36px rgba(0,0,0,.32) !important; --sh3:0 24px 64px rgba(0,0,0,.42) !important;
+  --pagi-l:rgba(120,140,200,.14) !important; --pagi-m:rgba(120,140,200,.3) !important;
+  --siang-l:rgba(176,125,98,.12) !important; --siang-m:rgba(176,125,98,.26) !important;
+  --malam-l:rgba(123,143,161,.1) !important;  --malam-m:rgba(123,143,161,.24) !important;
+  --lepas-l:rgba(155,141,181,.11) !important; --lepas-m:rgba(155,141,181,.26) !important;
+  --libur-l:rgba(168,154,138,.08) !important; --libur-m:rgba(168,154,138,.2) !important;
+}
+[data-mode="dark"][data-color="sky"]      { --hd-grad:linear-gradient(160deg,#17303e,#1e2e3e,#2a2838,#2e2418); --acc:#7abcda; --acc2:#5baac8; --pagi:#7abcda; }
+[data-mode="dark"][data-color="sage"]     { --hd-grad:linear-gradient(160deg,#1e2e1e,#2a342a,#2e2838,#2e2418); --acc:#90c094; --acc2:#78a87c; --pagi:#90c094; }
+[data-mode="dark"][data-color="rose"]     { --hd-grad:linear-gradient(160deg,#2e1820,#38202c,#302030,#2e1e18); --acc:#d89098; --acc2:#c07880; --pagi:#d89098; }
+[data-mode="dark"][data-color="lavender"] { --hd-grad:linear-gradient(160deg,#201838,#28204a,#2c1838,#281820); --acc:#a898d8; --acc2:#9080c8; --pagi:#a898d8; }
+[data-mode="dark"][data-color="terra"]    { --hd-grad:linear-gradient(160deg,#2a1e14,#342818,#302018,#2a1c10); --acc:#d08060; --acc2:#b86840; --pagi:#d08060; }
+
+/* ══ SHARED SHIFT COLORS ══ */
+:root {
+  --siang:#b07d62; --siang-l:#faf3ee; --siang-m:#e4c4ad;
+  --malam:#7b8fa1; --malam-l:#eef2f5; --malam-m:#c0cfda;
+  --lepas:#9b8db5; --lepas-l:#f4f1f9; --lepas-m:#d4cce8;
+  --libur:#a89a8a; --libur-l:#f5f2ee; --libur-m:#ddd4c8;
+  --cudak:#c47f8a;
+  --r:20px; --r2:12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg); color: var(--txt);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 400; min-height: 100vh;
+  transition: background .45s, color .45s;
+  overflow-x: hidden;
+}
+
+/* ── Blobs ── */
+.ambient { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.amb-blob { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .5; animation: blobDrift 18s ease-in-out infinite; }
+.amb-blob:nth-child(1) { width: 520px; height: 520px; top: -160px; left: -160px; animation-delay: 0s; }
+.amb-blob:nth-child(2) { width: 480px; height: 480px; bottom: -140px; right: -140px; animation-delay: -7s; }
+.amb-blob:nth-child(3) { width: 360px; height: 360px; top: 40%; left: 38%; animation-delay: -13s; }
+[data-mode="dark"] .amb-blob { opacity: .16; }
+.ambient::after { content:''; position:absolute; inset:0; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='0.035'/%3E%3C/svg%3E"); background-size:300px; opacity:.5; }
+@keyframes blobDrift { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(28px,-22px) scale(1.06)} 66%{transform:translate(-18px,26px) scale(.94)} }
+
+.page { max-width: 620px; margin: 0 auto; padding: 0 14px 80px; position: relative; z-index: 1; }
+
+/* ══ CONTROL BAR ══ */
+.ctrl-bar {
+  position: fixed; top: 16px; right: 16px; z-index: 1000;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 8px;
+}
+.dark-btn {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--surf); border: 1.5px solid var(--bord);
+  font-size: 17px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--sh2); transition: all .2s; line-height: 1;
+  padding: 0;
+}
+.dark-btn:hover { transform: scale(1.12); box-shadow: var(--sh3); }
+
+.swatch-wrap { display: flex; align-items: center; justify-content: flex-end; }
+
+/* The trigger dot — always visible */
+.swatch-trigger {
+  width: 28px; height: 28px; border-radius: 50%;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--acc), var(--lepas));
+  border: 2.5px solid var(--surf);
+  box-shadow: var(--sh2);
+  transition: transform .2s, box-shadow .2s;
+  position: relative; z-index: 2; flex-shrink: 0;
+}
+.swatch-trigger:hover { transform: scale(1.15); box-shadow: var(--sh3); }
+
+/* Expandable panel — slides out to the left of trigger */
+.swatch-row {
+  display: flex; gap: 7px; align-items: center;
+  background: var(--surf); border: 1.5px solid var(--bord);
+  border-radius: 30px;
+  box-shadow: var(--sh2);
+  max-width: 0; overflow: hidden; opacity: 0;
+  padding: 5px 0;
+  transition: max-width .38s cubic-bezier(.16,1,.3,1), opacity .25s ease, padding .38s;
+  pointer-events: none;
+  margin-right: 8px;
+}
+.swatch-row.open {
+  max-width: 180px; opacity: 1; pointer-events: all;
+  padding: 5px 10px;
+}
+.swatch {
+  width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+  cursor: pointer; transition: transform .18s, box-shadow .18s;
+  border: 2.5px solid transparent; position: relative;
+}
+.swatch:hover { transform: scale(1.22); }
+.swatch.active { border-color: var(--txt); box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--txt); transform: scale(1.12); }
+.swatch[data-c="sky"]      { background: linear-gradient(135deg,#5b9fc0,#9b8db5); }
+.swatch[data-c="sage"]     { background: linear-gradient(135deg,#7a9e7e,#b8d4a8); }
+.swatch[data-c="rose"]     { background: linear-gradient(135deg,#c47f8a,#e8a8b8); }
+.swatch[data-c="lavender"] { background: linear-gradient(135deg,#8b78c4,#c4b0e0); }
+.swatch[data-c="terra"]    { background: linear-gradient(135deg,#b86a42,#e0a878); }
+.swatch::after { content:attr(data-label); position:absolute; bottom:calc(100% + 6px); left:50%; transform:translateX(-50%); background:var(--txt); color:var(--bg); font-size:9px; font-weight:700; padding:3px 8px; border-radius:6px; white-space:nowrap; pointer-events:none; opacity:0; transition:opacity .15s; }
+.swatch:hover::after { opacity: 1; }
+
+/* ── Header ── */
+.header { text-align: center; padding: 0 0 24px; animation: fadeDown .8s cubic-bezier(.16,1,.3,1) both; }
+.header-card {
+  position: relative; overflow: hidden; border-radius: 0 0 36px 36px;
+  background: var(--hd-grad); padding: 40px 24px 52px;
+  display: flex; flex-direction: column; align-items: center;
+  transition: background 1s;
+}
+.hd-shape { position: absolute; border-radius: 50%; opacity: .25; pointer-events: none; transition: background .8s; }
+.hd-shape-1 { width: 180px; height: 180px; background: var(--hs1); top: -60px; left: -50px; }
+.hd-shape-2 { width: 120px; height: 120px; background: var(--hs2); bottom: -30px; right: 40px; }
+.hd-shape-3 { width: 80px;  height: 80px;  background: var(--hs3); top: 20px; right: -20px; }
+[data-mode="dark"] .hd-shape { opacity: .1; }
+.header-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:36px; background:var(--bg); border-radius:50% 50% 0 0/100% 100% 0 0; transition:background .45s; }
+.header-pill { display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,.5); backdrop-filter:blur(10px); border:1.5px solid rgba(255,255,255,.7); border-radius:30px; padding:5px 16px; font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#443040; margin-bottom:12px; position:relative; z-index:2; }
+[data-mode="dark"] .header-pill { background:rgba(0,0,0,.3); border-color:rgba(255,255,255,.15); color:var(--txt2); }
+.pill-dot { width:7px; height:7px; border-radius:50%; background:linear-gradient(135deg,var(--acc),var(--lepas)); animation:pillPulse 2.4s ease infinite; }
+@keyframes pillPulse { 0%,100%{box-shadow:0 0 0 0 rgba(150,120,200,.45)} 50%{box-shadow:0 0 0 6px rgba(150,120,200,0)} }
+.header-title { font-family:'DM Serif Display',serif; font-size:clamp(44px,11vw,68px); font-weight:400; font-style:italic; line-height:.95; color:var(--hd-txt); position:relative; z-index:2; letter-spacing:-1px; transition:color .6s; }
+[data-mode="dark"] .header-title { color:var(--txt); }
+.header-sub { font-size:13px; font-weight:500; color:rgba(40,28,22,.5); margin-top:6px; position:relative; z-index:2; }
+[data-mode="dark"] .header-sub { color:var(--txt3); }
+
+/* ── Month Nav ── */
+.month-nav { display:flex; align-items:center; justify-content:center; gap:20px; margin-bottom:24px; animation:fadeUp .6s cubic-bezier(.16,1,.3,1) .1s both; }
+.nav-btn { width:46px; height:46px; border-radius:50%; background:var(--surf); border:1.5px solid var(--bord); font-size:22px; cursor:pointer; color:var(--txt2); display:flex; align-items:center; justify-content:center; transition:all .22s; box-shadow:var(--sh); font-family:'DM Sans',system-ui,sans-serif; }
+.nav-btn:hover { background:var(--acc); color:#fff; border-color:var(--acc); transform:scale(1.1); box-shadow:var(--sh2); }
+.month-label-wrap { overflow:hidden; text-align:center; min-width:200px; }
+.month-label { font-family:'DM Serif Display',serif; font-size:clamp(28px,6.5vw,44px); font-weight:400; color:var(--txt); letter-spacing:-.5px; }
+.month-sub { font-size:11px; color:var(--txt3); margin-top:2px; letter-spacing:2px; font-weight:600; text-transform:uppercase; }
+
+/* ── Card ── */
+.card { background:var(--surf); border:1.5px solid var(--bord); border-radius:var(--r); box-shadow:var(--sh); overflow:hidden; transition:background .3s,border-color .3s,box-shadow .2s; margin-bottom:14px; }
+.card:hover { box-shadow:var(--sh2); }
+.card-hd { display:flex; align-items:center; justify-content:space-between; padding:16px 20px; cursor:pointer; user-select:none; border-bottom:1.5px solid transparent; transition:border-color .2s; }
+.card-hd.open { border-color:var(--bord); }
+.card-hd-l { display:flex; align-items:center; gap:11px; }
+.card-icon { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; }
+.card-title { font-size:11px; font-weight:700; letter-spacing:.8px; text-transform:uppercase; color:var(--txt2); font-family:'DM Sans',system-ui,sans-serif; }
+.chev { font-size:10px; color:var(--txt3); transition:transform .3s; }
+.chev.open { transform:rotate(180deg); }
+.collapse { max-height:0; overflow:hidden; transition:max-height .45s cubic-bezier(.16,1,.3,1); }
+.collapse.open { max-height:1600px; }
+.card-body { padding:18px 20px; }
+
+/* ── Calendar ── */
+.cal-wrap { background:var(--surf); border:1.5px solid var(--bord); border-radius:var(--r); box-shadow:var(--sh); overflow:visible; margin-bottom:14px; }
+.day-row { display:grid; grid-template-columns:repeat(7,1fr); gap:4px; padding:14px 10px 6px; }
+.day-lbl { text-align:center; font-size:9px; font-weight:700; color:var(--txt3); letter-spacing:2px; text-transform:uppercase; }
+.cal-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:4px; padding:4px 10px 12px; }
+/* Cell stagger — applied via JS */
+
+
+.dc { border-radius:var(--r2); padding:7px 4px 6px; min-height:86px; position:relative; transition:background .2s,border-color .2s,box-shadow .2s; border:1.5px solid transparent; cursor:default; display:flex; flex-direction:column; align-items:flex-start; }
+.dc.pagi-c  { background:var(--pagi-l);  border-color:var(--pagi-m); }
+.dc.siang-c { background:var(--siang-l); border-color:var(--siang-m); }
+.dc.malam-c { background:var(--malam-l); border-color:var(--malam-m); }
+.dc.lepas-c { background:var(--lepas-l); border-color:var(--lepas-m); }
+.dc.libur-c { background:var(--libur-l); border-color:var(--libur-m); }
+.dc.avail { cursor:pointer; }
+@media(hover:hover){.dc.avail:hover { box-shadow:var(--sh2); z-index:5; opacity:1 !important; }}
+.dc.blk { cursor:not-allowed; }
+.dc.saved-cuti { background:linear-gradient(145deg,var(--acc),var(--acc2)) !important; border-color:var(--acc) !important; box-shadow:0 4px 20px rgba(0,0,0,.18) !important; opacity:1 !important; cursor:pointer; }
+@keyframes savedPop {
+  0%   { transform:scale(1); }
+  20%  { transform:scale(1.14) rotate(-2deg); }
+  50%  { transform:scale(.96) rotate(1deg); }
+  75%  { transform:scale(1.04); }
+  100% { transform:scale(1); }
+}
+.dc.saved-cuti .dc-num,.dc.saved-cuti .dc-sh,.dc.saved-cuti .dc-nm { color:rgba(255,255,255,.9) !important; }
+.dc.cudak-c { background:linear-gradient(145deg,#fce8ec,#f8d4da) !important; border-color:#e8a0a8 !important; box-shadow:0 4px 18px rgba(196,127,138,.25) !important; opacity:1 !important; cursor:pointer; }
+[data-mode="dark"] .dc.cudak-c { background:linear-gradient(145deg,rgba(196,127,138,.2),rgba(196,127,138,.1)) !important; }
+.dc.cudak-c .dc-sh { color:var(--cudak) !important; }
+.dc.swapped { outline:2px dashed var(--malam); outline-offset:1px; }
+.selecting .dc.blk { opacity:.28; }
+.selecting .dc.malam-c:not(.saved-cuti):not(.cudak-c) { opacity:.32; }
+.selecting .dc.lepas-c:not(.saved-cuti):not(.cudak-c) { opacity:.32; }
+.selecting .dc.libur-c:not(.saved-cuti):not(.cudak-c) { opacity:.32; }
+
+.dc-num { font-size:13px; font-weight:700; color:var(--txt); font-family:'DM Serif Display',serif; line-height:1; padding-left:3px; }
+.dc-nm  { font-size:7.5px; color:var(--txt3); letter-spacing:.5px; margin-bottom:2px; margin-top:1px; padding-left:3px; }
+.dc-em  { font-size:14px; line-height:1.2; margin:auto 0 2px; padding-left:2px; }
+.dc-sh  { font-size:7.5px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; padding-left:3px; }
+.pagi-c .dc-sh  { color:var(--pagi); }
+.siang-c .dc-sh { color:var(--siang); }
+.malam-c .dc-sh { color:var(--malam); }
+.lepas-c .dc-sh { color:var(--lepas); }
+.libur-c .dc-sh { color:var(--libur); }
+.dots { display:flex; flex-wrap:wrap; gap:2px; margin-top:3px; padding-left:3px; }
+.dot  { width:6px; height:6px; border-radius:50%; }
+.swap-b { position:absolute; top:4px; right:5px; font-size:9px; color:var(--malam); font-weight:700; }
+
+/* ── Legend ── */
+.legend { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; padding:16px 18px; background:var(--surf); border:1.5px solid var(--bord); border-radius:var(--r); box-shadow:var(--sh); margin-bottom:14px;  }
+.leg-i { display:flex; align-items:center; gap:5px; font-size:11px; color:var(--txt2); font-weight:500; }
+.leg-d { width:9px; height:9px; border-radius:50%; }
+
+/* ── Forms ── */
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.fgrp { display:flex; flex-direction:column; gap:5px; }
+.flabel { font-size:11px; font-weight:600; color:var(--txt2); letter-spacing:.3px; }
+.inp { background:var(--bg2); border:1.5px solid var(--bord); border-radius:14px; padding:9px 13px; font-size:13px; color:var(--txt); outline:none; font-family:'DM Sans',system-ui,sans-serif; transition:border-color .2s,box-shadow .2s; width:100%; }
+.inp:focus { border-color:var(--acc); box-shadow:0 0 0 3px rgba(100,140,200,.12); }
+.inp::placeholder { color:var(--txt3); }
+select.inp { appearance:none; cursor:pointer; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a89a8a' fill='none' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; padding-right:30px; }
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:6px; background:var(--acc); color:#fff; border:none; border-radius:14px; padding:10px 20px; font-size:13px; font-weight:700; cursor:pointer; font-family:'DM Sans',system-ui,sans-serif; transition:all .2s; white-space:nowrap; }
+.btn:hover { opacity:.88; transform:translateY(-1px); box-shadow:var(--sh2); }
+.btn:active { transform:translateY(0); }
+.btn.sec { background:var(--surf2); color:var(--txt2); border:1.5px solid var(--bord); }
+.btn.sec:hover { background:var(--bord); box-shadow:none; }
+.btn.prp { background:#c47f8a; }
+.btn.sm  { padding:5px 12px; font-size:11px; border-radius:8px; }
+.btn.danger { background:#d97070; }
+.btn.w100 { width:100%; margin-top:10px; }
+
+.radio-tabs { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:14px; }
+.rtab { padding:6px 14px; border-radius:22px; font-size:11px; font-weight:600; cursor:pointer; border:1.5px solid var(--bord); color:var(--txt2); background:var(--surf2); transition:all .16s; user-select:none; }
+.rtab.active { background:var(--acc); color:#fff; border-color:var(--acc); box-shadow:0 3px 12px rgba(0,0,0,.15); }
+
+.sum-lbl { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; }
+.chips { display:flex; flex-wrap:wrap; gap:5px; min-height:24px; }
+.chip { padding:4px 11px; border-radius:22px; font-size:11px; font-weight:700; display:inline-flex; align-items:center; gap:3px; border:1.5px solid; }
+.chip.pagi  { background:var(--pagi-l);  border-color:var(--pagi-m);  color:var(--pagi); }
+.chip.siang { background:var(--siang-l); border-color:var(--siang-m); color:var(--siang); }
+
+.pola-pv { font-size:11px; padding:9px 13px; border-radius:10px; margin-top:8px; background:var(--pagi-l); color:var(--pagi); font-weight:600; border:1.5px solid var(--pagi-m); display:none; }
+.pola-pv.vis { display:block; }
+
+.k-list { display:flex; flex-direction:column; gap:6px; max-height:210px; overflow-y:auto; margin-top:12px; }
+.k-item { display:flex; align-items:center; gap:9px; background:var(--bg2); border-radius:11px; padding:9px 13px; font-size:12px; transition:background .15s; }
+.k-item:hover { background:var(--bord); }
+.k-dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+.k-name { font-weight:700; min-width:72px; color:var(--txt); }
+.k-dates { color:var(--txt3); font-size:11px; flex:1; }
+.k-del { background:none; border:none; cursor:pointer; color:var(--txt3); font-size:12px; padding:3px 8px; border-radius:7px; transition:all .15s; }
+.k-del:hover { color:#d97070; background:rgba(217,112,112,.1); }
+
+.sw-list { display:flex; flex-direction:column; gap:6px; max-height:190px; overflow-y:auto; margin-top:10px; }
+.sw-item { display:flex; align-items:center; gap:9px; background:var(--bg2); border-radius:11px; padding:9px 13px; font-size:12px; }
+.sw-badge { padding:3px 9px; border-radius:7px; font-size:10px; font-weight:700; flex-shrink:0; }
+.sw-badge.sehari { background:rgba(123,143,161,.12); color:var(--malam); }
+.sw-badge.perm   { background:rgba(100,100,200,.1);  color:var(--acc); }
+.sw-badge.cudak  { background:rgba(196,127,138,.12); color:var(--cudak); }
+
+#saved-card { display:none; }
+.cudak-box { display:flex; align-items:center; gap:9px; margin-bottom:12px; padding:10px 14px; background:rgba(196,127,138,.08); border-radius:10px; border:1.5px solid rgba(196,127,138,.22); }
+.empty-txt { font-size:12px; color:var(--txt3); padding:6px 0; font-style:italic; }
+
+.toast { position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(70px); background:var(--txt); color:var(--bg); border-radius:40px; padding:13px 26px; font-size:13px; font-weight:600; z-index:9999; box-shadow:var(--sh3); transition:transform .4s cubic-bezier(.16,1,.3,1),opacity .3s; opacity:0; pointer-events:none; white-space:nowrap; font-family:'DM Sans',system-ui,sans-serif; }
+.toast.show { transform:translateX(-50%) translateY(0); opacity:1; }
+
+/* ════════════════════
+   KEYFRAMES
+════════════════════ */
+@keyframes fadeDown {
+  from { opacity:0; transform:translateY(-28px) scale(.97); }
+  to   { opacity:1; transform:none; }
+}
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(24px) scale(.97); }
+  to   { opacity:1; transform:none; }
+}
+@keyframes slideInLeft {
+  from { opacity:0; transform:translateX(-20px); }
+  to   { opacity:1; transform:none; }
+}
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+@keyframes floatBadge {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-4px); }
+}
+@keyframes ripple {
+  0%   { transform:scale(0);   opacity:.5; }
+  100% { transform:scale(3.5); opacity:0; }
+}
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(var(--acc-rgb),.45); }
+  70%  { box-shadow: 0 0 0 10px rgba(var(--acc-rgb),0); }
+  100% { box-shadow: 0 0 0 0   rgba(var(--acc-rgb),0); }
+}
+@keyframes monthSlideIn {
+  from { opacity:0; transform:translateX(30px) scale(.96); }
+  to   { opacity:1; transform:none; }
+}
+@keyframes monthSlideOut {
+  from { opacity:1; transform:none; }
+  to   { opacity:0; transform:translateX(-30px) scale(.96); }
+}
+@keyframes cardEntrance {
+  from { opacity:0; transform:translateY(18px) scale(.98); }
+  to   { opacity:1; transform:none; }
+}
+@keyframes dotBounce {
+  0%,80%,100% { transform:scale(0); }
+  40%         { transform:scale(1); }
+}
+@keyframes shiftPop {
+  0%   { transform:scale(1); }
+  40%  { transform:scale(1.12) rotate(-2deg); }
+  70%  { transform:scale(.96) rotate(1deg); }
+  100% { transform:scale(1); }
+}
+@keyframes headerFloat {
+  0%,100% { transform:translateY(0) rotate(0deg); }
+  33%     { transform:translateY(-6px) rotate(.5deg); }
+  66%     { transform:translateY(3px) rotate(-.5deg); }
+}
+@keyframes sparkle {
+  0%,100% { opacity:0; transform:scale(0) rotate(0deg); }
+  50%     { opacity:1; transform:scale(1) rotate(180deg); }
+}
+
+/* ════════════════════
+   ENTRANCE ANIMATIONS
+════════════════════ */
+/* Staggered card entrance on load */
+.card:nth-child(1) { animation: cardEntrance .55s cubic-bezier(.16,1,.3,1) .25s both; }
+.card:nth-child(2) { animation: cardEntrance .55s cubic-bezier(.16,1,.3,1) .35s both; }
+.card:nth-child(3) { animation: cardEntrance .55s cubic-bezier(.16,1,.3,1) .45s both; }
+.card:nth-child(4) { animation: cardEntrance .55s cubic-bezier(.16,1,.3,1) .55s both; }
+.card:nth-child(5) { animation: cardEntrance .55s cubic-bezier(.16,1,.3,1) .65s both; }
+
+/* Header title floats gently */
+.header-title { animation: fadeDown .8s cubic-bezier(.16,1,.3,1) both; }
+.header-sub   { animation: fadeDown .8s cubic-bezier(.16,1,.3,1) .12s both; }
+.header-pill  { animation: fadeDown .6s cubic-bezier(.16,1,.3,1) .05s both; }
+
+/* Decorative shapes float */
+.hd-shape-1 { animation: headerFloat 9s ease-in-out infinite; }
+.hd-shape-2 { animation: headerFloat 11s ease-in-out infinite reverse; animation-delay:-3s; }
+.hd-shape-3 { animation: headerFloat 7s ease-in-out infinite; animation-delay:-5s; }
+
+/* Legend items stagger in */
+.leg-i {}
+
+/* ════════════════════
+   INTERACTIVE
+════════════════════ */
+/* Calendar cell micro-interactions */
+.dc {
+  position: relative;
+  overflow: hidden;
+  transition: background .2s, border-color .2s, box-shadow .25s, transform .2s cubic-bezier(.34,1.56,.64,1);
+}
+
+
+/* Card header hover lift */
+.card-hd { transition: background .2s, border-color .2s; }
+.card-hd:hover { background: var(--surf2); }
+
+/* Collapse open — children slide in */
+.collapse.open .card-body { animation: fadeUp .35s cubic-bezier(.16,1,.3,1) both; }
+
+/* Nav btn spring */
+.nav-btn { transition: all .25s cubic-bezier(.34,1.56,.64,1); }
+.nav-btn:hover { transform: scale(1.18); }
+
+/* Swatch spring */
+.swatch { transition: transform .22s cubic-bezier(.34,1.56,.64,1), box-shadow .18s; }
+.swatch:hover { transform: scale(1.28) translateY(-2px); }
+.swatch.active { transform: scale(1.18); }
+
+/* Dark btn spin on click */
+.dark-btn { transition: transform .3s cubic-bezier(.34,1.56,.64,1), background .3s, border-color .3s, box-shadow .2s; }
+.dark-btn.spinning { animation: none; transform: rotate(360deg); transition: transform .4s cubic-bezier(.34,1.56,.64,1); }
+
+/* Chip pop-in */
+.chip { animation: fadeUp .3s cubic-bezier(.16,1,.3,1) both; }
+
+/* k-item slide in */
+.k-item { animation: slideInLeft .3s cubic-bezier(.16,1,.3,1) both; }
+
+/* Toast spring */
+.toast { transition: transform .45s cubic-bezier(.34,1.56,.64,1), opacity .3s; }
+
+/* Trigger dot pulse */
+.swatch-trigger {
+  animation: pulse-ring 3s ease-out infinite;
+}
+
+/* Month label transition */
+.month-label { transition: opacity .22s, transform .22s; }
+.month-label.changing { opacity:0; transform:scale(.92); }
+
+/* Button active press */
+.btn:active  { transform: translateY(1px) scale(.97); }
+.rtab:active { transform: scale(.95); }
+
+/* Swatch row slide */
+.swatch-row {
+  transition: max-width .4s cubic-bezier(.34,1.56,.64,1), opacity .25s ease, padding .4s cubic-bezier(.34,1.56,.64,1);
+}
+
+/* Chev spin */
+.chev { transition: transform .35s cubic-bezier(.34,1.56,.64,1); }
+.chev.open { transform: rotate(180deg) scale(1.1); }
+
+@media(max-width:520px){
+  .cal-grid{gap:3px;padding:4px 4px 8px} .day-row{padding:10px 4px 4px;gap:3px}
+  .dc{min-height:74px;padding:5px 3px} .two-col{grid-template-columns:1fr}
+  .ctrl-bar{top:10px;right:10px} .swatch{width:18px;height:18px}
+}
+
+/* ══ DAY POPUP ══ */
+.day-popup {
+  position: fixed;
+  z-index: 5000;
+  background: var(--surf);
+  border: 1.5px solid var(--bord);
+  border-radius: 14px;
+  box-shadow: var(--sh3);
+  padding: 10px 12px;
+  width: 160px;
+  pointer-events: auto;
+  transform-origin: top center;
+}
+.day-popup.pop-above { transform-origin: bottom center; }
+
+/* Arrow pointer */
+.day-popup::before {
+  content: '';
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  border: 6px solid transparent;
+}
+.day-popup { --arrow-x: 50%; }
+.day-popup.pop-below::before {
+  top: -12px; left: var(--arrow-x); transform: translateX(-50%);
+  border-bottom-color: var(--bord);
+}
+.day-popup.pop-below::after {
+  content: '';
+  position: absolute;
+  top: -10px; left: var(--arrow-x); transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-bottom-color: var(--surf);
+}
+.day-popup.pop-above::before {
+  bottom: -12px; left: var(--arrow-x); transform: translateX(-50%);
+  border-top-color: var(--bord);
+}
+.day-popup.pop-above::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; left: var(--arrow-x); transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--surf);
+}
+
+@keyframes popBelow {
+  from { opacity:0; transform:translateY(-6px) scale(.92); }
+  to   { opacity:1; transform:translateY(0) scale(1); }
+}
+@keyframes popAbove {
+  from { opacity:0; transform:translateY(6px) scale(.92); }
+  to   { opacity:1; transform:translateY(0) scale(1); }
+}
+.day-popup.pop-below { animation: popBelow .2s cubic-bezier(.16,1,.3,1); }
+.day-popup.pop-above { animation: popAbove .2s cubic-bezier(.16,1,.3,1); }
+
+.popup-header {
+  display: flex; align-items: center; gap: 6px;
+  margin-bottom: 7px; padding-bottom: 7px;
+  border-bottom: 1px solid var(--bord);
+}
+.popup-date {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px; font-weight: 400; line-height: 1;
+  color: var(--txt);
+}
+.popup-dayname {
+  font-size: 9px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--txt3);
+  margin-top: 1px;
+}
+.popup-shift-badge {
+  margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 1px;
+}
+.popup-em { font-size: 16px; line-height: 1; }
+.popup-sh {
+  font-size: 8px; font-weight: 800; letter-spacing: .8px;
+  text-transform: uppercase;
+}
+.popup-section-lbl {
+  font-size: 8px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--txt3);
+  margin-bottom: 5px;
+}
+.popup-person {
+  display: flex; align-items: center; gap: 6px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--bord);
+  font-size: 11px; font-weight: 600; color: var(--txt);
+}
+.popup-person:last-child { border-bottom: none; }
+.popup-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.popup-empty { font-size: 10px; color: var(--txt3); font-style: italic; }
+.popup-close {
+  position: absolute; top: 6px; right: 8px;
+  background: none; border: none; cursor: pointer;
+  color: var(--txt3); font-size: 11px; line-height: 1;
+  padding: 2px 4px; border-radius: 5px; transition: color .15s;
+}
+.popup-close:hover { color: var(--txt); }
+/* Overlay to catch outside clicks */
+.popup-overlay {
+  position: fixed; inset: 0; z-index: 4999;
+  background: transparent;
+}
+
+  40%  { transform: scale(1.12); }
+  100% { transform: scale(1);    }
+}
+
+
+/* ── Kemungkinan cuti (pola LLC) ── */
+.dc.maybe-c {
+  background: var(--libur-l) !important;
+  border: 1.5px dashed var(--txt3) !important;
+  opacity: .72;
+  cursor: pointer;
+}
+.dc.maybe-c:active { opacity: 1; }
+.maybe-dot-wrap { display:flex; flex-wrap:wrap; gap:2px; margin-top:3px; padding-left:3px; }
+.maybe-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  flex-shrink: 0;
+}
+.dc.maybe-c .dc-sh { color: var(--txt3) !important; font-style: italic; }
+.k-item .maybe-badge {
+  font-size:9px; font-weight:700; padding:2px 7px; border-radius:6px;
+  background:rgba(168,154,138,.15); color:var(--txt3); letter-spacing:.5px;
+  margin-left:auto; flex-shrink:0;
+}
+
+
+/* ── Toggle switch ── */
+.tog-wrap {
+  width: 38px; height: 22px; border-radius: 11px;
+  background: var(--bord); cursor: pointer;
+  position: relative; transition: background .25s;
+  flex-shrink: 0;
+}
+.tog-wrap.on { background: var(--acc); }
+.tog-knob {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: #fff; position: absolute;
+  top: 3px; left: 3px;
+  transition: transform .25s cubic-bezier(.34,1.56,.64,1);
+  box-shadow: 0 1px 4px rgba(0,0,0,.2);
+}
+.tog-wrap.on .tog-knob { transform: translateX(16px); }
+
+
+/* ── Hari ini ── */
+.dc.today { box-shadow: 0 0 0 2px var(--acc) !important; }
+.dc.today .dc-num {
+  background: var(--acc);
+  color: #fff !important;
+  border-radius: 6px;
+  padding: 1px 5px;
+  margin-left: 1px;
+}
+
+
+/* ── Sabtu Minggu & Tgl Merah ── */
+.dc.minggu .dc-num, .dc.libnas .dc-num { color: #e05555 !important; }
+.dc.sabtu  .dc-num { color: #c07838 !important; }
+.dc.minggu .dc-nm,  .dc.libnas .dc-nm  { color: #e05555 !important; }
+.dc.sabtu  .dc-nm  { color: #c07838 !important; }
+.day-lbl.min-lbl { color: #e05555 !important; }
+.day-lbl.sab-lbl { color: #c07838 !important; }
+.libnas-badge {
+  font-size: 8px; color: #e05555; font-weight:700;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  max-width: 100%; padding: 0 3px; margin-top:1px;
+  line-height: 1.2;
+}
+
+
+
+
+
+
+/* ── Lembur ── */
+.dc.lembur-c::after {
+  content: '⚡';
+  position:absolute; top:3px; right:4px; font-size:9px;
+  line-height:1;
+}
+.lembur-badge {
+  font-size:8px; font-weight:700; color:var(--acc2);
+  background:rgba(255,165,0,.15); border-radius:4px;
+  padding:1px 4px; margin-top:1px; white-space:nowrap;
+}
+.lembur-period {
+  font-size:10px; color:var(--txt3); margin-bottom:8px;
+  font-weight:600; letter-spacing:.5px;
+}
+.lembur-total-box {
+  background:linear-gradient(135deg,var(--acc),var(--acc2));
+  border-radius:14px; padding:14px 16px; margin-bottom:12px; color:#fff;
+}
+.lembur-total-box .lt-label { font-size:10px; font-weight:700; letter-spacing:.8px; text-transform:uppercase; opacity:.8; margin-bottom:4px; }
+.lembur-total-box .lt-val   { font-size:28px; font-weight:700; font-family:'DM Serif Display',serif; }
+.lembur-total-box .lt-sub   { font-size:11px; opacity:.8; }
+.lembur-item {
+  display:flex; align-items:center; gap:9px;
+  background:var(--bg2); border-radius:11px;
+  padding:9px 14px; margin-bottom:7px;
+}
+.lembur-dot {
+  width:8px; height:8px; border-radius:50%;
+  background:var(--acc); flex-shrink:0;
+}
+.lembur-jam-sel {
+  display:flex; gap:6px; margin:10px 0 4px;
+}
+.lembur-jam-btn {
+  flex:1; padding:8px 4px; border-radius:10px; border:1.5px solid var(--bord);
+  background:var(--surf); color:var(--txt2); font-size:12px; font-weight:600;
+  cursor:pointer; font-family:'DM Sans',system-ui,sans-serif; transition:all .18s; text-align:center;
+}
+.lembur-jam-btn.active { background:var(--acc); color:#fff; border-color:var(--acc); }
+
+/* ── Month Picker ── */
+.month-label-wrap { cursor: pointer; }
+.month-label-wrap:hover .month-label { opacity: .75; }
+
+.mpicker-overlay {
+  display:none; position:fixed; inset:0; z-index:1200;
+  background:rgba(0,0,0,.45); backdrop-filter:blur(3px);
+  align-items:center; justify-content:center;
+}
+.mpicker-overlay.open { display:flex; }
+.mpicker-box {
+  background:var(--surf); border-radius:24px;
+  width:min(360px,92vw); padding:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+  animation:popIn .28s cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes popIn { from{opacity:0;transform:scale(.88)} to{opacity:1;transform:scale(1)} }
+
+.mpicker-year-row {
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom:16px;
+}
+.mpicker-year-label {
+  font-family:'DM Serif Display',serif; font-size:22px; color:var(--txt);
+  cursor:pointer; padding:4px 12px; border-radius:10px;
+  transition:background .15s;
+}
+.mpicker-year-label:hover { background:var(--bord); }
+.mpicker-yr-btn {
+  width:36px; height:36px; border-radius:50%; border:1.5px solid var(--bord);
+  background:var(--surf); color:var(--txt2); font-size:18px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .18s;
+}
+.mpicker-yr-btn:hover { background:var(--acc); color:#fff; border-color:var(--acc); }
+
+.mpicker-months {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:8px;
+}
+.mpicker-m {
+  padding:10px 6px; border-radius:14px; border:none;
+  background:var(--bg2,var(--bord)); color:var(--txt);
+  font-size:13px; font-weight:600; cursor:pointer;
+  font-family:'DM Sans',system-ui,sans-serif;
+  transition:all .18s; text-align:center;
+}
+.mpicker-m:hover { background:var(--acc-l,var(--pagi-l)); color:var(--acc); }
+.mpicker-m.active { background:linear-gradient(135deg,var(--acc),var(--acc2)); color:#fff; box-shadow:0 4px 14px rgba(0,0,0,.15); }
+.mpicker-m.disabled { opacity:.3; pointer-events:none; }
+.mpicker-today-btn {
+  margin-top:14px; width:100%; padding:11px; border-radius:14px;
+  border:1.5px solid var(--bord); background:none; color:var(--txt2);
+  font-size:13px; font-weight:600; cursor:pointer;
+  font-family:'DM Sans',system-ui,sans-serif; transition:all .18s;
+}
+.mpicker-today-btn:hover { background:var(--bord); }
+
+/* ── Data Export/Import ── */
+.data-modal-overlay {
+  display:none; position:fixed; inset:0; z-index:1100;
+  background:rgba(0,0,0,.5); backdrop-filter:blur(4px);
+  align-items:flex-end; justify-content:center;
+}
+.data-modal-overlay.open { display:flex; }
+.data-modal {
+  background:var(--surf); border-radius:24px 24px 0 0;
+  width:100%; max-width:480px; padding:24px 20px 36px;
+  animation:slideUp .32s cubic-bezier(.16,1,.3,1) both;
+}
+.data-modal h3 { font-family:'DM Serif Display',serif; font-size:20px; margin:0 0 4px; color:var(--txt); }
+.data-modal p  { font-size:12px; color:var(--txt3); margin:0 0 14px; }
+.data-textarea {
+  width:100%; height:120px; border-radius:12px; border:1.5px solid var(--bord);
+  background:var(--surf2,#f8f9fa); color:var(--txt); font-size:11px;
+  padding:10px; font-family:monospace; resize:none; box-sizing:border-box;
+  margin-bottom:12px;
+}
+.data-actions { display:flex; gap:10px; flex-wrap:wrap; }
+.dat-btn {
+  flex:1; min-width:120px; padding:12px; border-radius:14px; border:none;
+  font-size:13px; font-weight:600; cursor:pointer;
+  font-family:'DM Sans',system-ui,sans-serif; transition:all .18s;
+  display:flex; align-items:center; justify-content:center; gap:6px;
+}
+.dat-btn-copy   { background:linear-gradient(135deg,var(--acc),var(--acc2)); color:#fff; }
+.dat-btn-import { background:var(--pagi-l); color:var(--pagi); border:1.5px solid var(--pagi-m); }
+.dat-btn-reset  { background:#fff0f0; color:#e05555; border:1.5px solid #f5c0c0; }
+.dat-btn:active { transform:scale(.96); }
+
+/* ── Export color fix ── */
+.exporting .dc-num, .exporting .dc-sh, .exporting .dc-nm {
+  color: inherit !important;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.exporting .month-label { color: #1a1a2e !important; }
+.exporting .month-sub   { color: #555 !important; }
+.exporting .day-lbl     { color: #888 !important; }
+.exporting .day-lbl.min-lbl { color: #e05555 !important; }
+.exporting .day-lbl.sab-lbl { color: #c07838 !important; }
+.exporting .nav-btn { visibility: hidden; }
+.export-title-banner {
+  display: none;
+  text-align: center;
+  padding: 18px 0 6px;
+}
+.exporting .export-title-banner { display: block; }
+.exporting .month-nav { display: none; }
+.export-title-banner .etb-month {
+  font-family: 'DM Serif Display', serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: #1a1a2e;
+  letter-spacing: -.5px;
+  line-height: 1.1;
+}
+.export-title-banner .etb-year {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* ── Export ── */
+.export-btn {
+  position:fixed; bottom:22px; right:22px; z-index:200;
+  width:52px; height:52px; border-radius:50%;
+  background:linear-gradient(135deg,var(--acc),var(--acc2));
+  border:none; box-shadow:0 4px 18px rgba(0,0,0,.22);
+  font-size:22px; cursor:pointer; display:flex; align-items:center; justify-content:center;
+  transition:transform .2s, box-shadow .2s;
+}
+.export-btn:active { transform:scale(.92); }
+.export-modal-overlay {
+  display:none; position:fixed; inset:0; z-index:1100;
+  background:rgba(0,0,0,.5); backdrop-filter:blur(4px);
+  align-items:flex-end; justify-content:center;
+}
+.export-modal-overlay.open { display:flex; }
+.export-modal {
+  background:var(--surf); border-radius:24px 24px 0 0;
+  width:100%; max-width:520px;
+  padding:24px 20px calc(env(safe-area-inset-bottom, 0px) + 28px);
+  animation:slideUp .32s cubic-bezier(.16,1,.3,1) both;
+  max-height:90dvh;
+  display:flex; flex-direction:column;
+  overflow:hidden;
+}
+@media(min-width:600px){
+  .export-modal-overlay { align-items:center; }
+  .export-modal { border-radius:24px; max-height:85vh; }
+}
+@keyframes slideUp { from{transform:translateY(100%)} to{transform:translateY(0)} }
+.export-modal h3 { font-family:'DM Serif Display',serif; font-size:20px; margin:0 0 6px; color:var(--txt); }
+.export-modal p  { font-size:12px; color:var(--txt3); margin:0 0 18px; }
+.export-preview  {
+  border-radius:12px; overflow:auto; border:1.5px solid var(--bord);
+  margin-bottom:18px; min-height:80px; flex:1;
+  display:flex; align-items:flex-start; justify-content:center;
+}
+.export-preview img { width:100%; display:block; }
+.export-preview .exp-loading { font-size:13px; color:var(--txt3); padding:24px; margin:auto; }
+.export-actions { display:flex; gap:10px; flex-shrink:0; flex-wrap:wrap; }
+.exp-btn {
+  flex:1; padding:13px; border-radius:14px; border:none; font-size:14px; font-weight:600;
+  cursor:pointer; font-family:'DM Sans',system-ui,sans-serif; transition:all .18s;
+  display:flex; align-items:center; justify-content:center; gap:6px;
+}
+.exp-btn-dl  { background:linear-gradient(135deg,var(--acc),var(--acc2)); color:#fff; }
+.exp-btn-sh  { background:var(--surf2,var(--bord)); color:var(--txt); border:1.5px solid var(--bord); }
+.exp-btn:active { transform:scale(.96); }
+.exp-close { float:right; background:none; border:none; font-size:20px; color:var(--txt3); cursor:pointer; margin-top:-4px; }
+
+/* ── Month slide animation ── */
+@keyframes slideOutLeft  { from{transform:translateX(0)}    to{transform:translateX(-100%)} }
+@keyframes slideOutRight { from{transform:translateX(0)}    to{transform:translateX(100%)}  }
+@keyframes slideInLeft   { from{transform:translateX(100%)} to{transform:translateX(0)}     }
+@keyframes slideInRight  { from{transform:translateX(-100%)}to{transform:translateX(0)}     }
+.cal-slide-out-left  { animation: slideOutLeft  .3s cubic-bezier(.4,0,.2,1) forwards; }
+.cal-slide-out-right { animation: slideOutRight .3s cubic-bezier(.4,0,.2,1) forwards; }
+.cal-slide-in-left   { animation: slideInLeft   .3s cubic-bezier(.4,0,.2,1) forwards; }
+.cal-slide-in-right  { animation: slideInRight  .3s cubic-bezier(.4,0,.2,1) forwards; }
+#cal-wrap { overflow: hidden; }
+
+/* ── Cell grow (valid clicks only) ── */
+.dc.click-grow {
+  animation: cellGrow .28s cubic-bezier(.34,1.56,.64,1) !important;
+  z-index: 10;
+  position: relative;
+  will-change: transform;
+}
+@keyframes cellGrow {
+  0%   { transform: scale(1);     }
+  40%  { transform: scale(1.18);  }
+  100% { transform: scale(1);     }
+}
+
+/* ══════════════════════════════════════
+   DESKTOP LAYOUT (min-width: 900px)
+══════════════════════════════════════ */
+@media(min-width:900px){
+
+  /* Page wrapper jadi lebih lebar */
+  .page {
+    max-width: 1200px;
+    padding: 0 32px 60px;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    grid-template-rows: auto;
+    column-gap: 24px;
+    align-items: start;
+  }
+
+  /* Header full width */
+  .header { grid-column: 1 / -1; }
+
+  /* Kolom kiri: export-area (nav+cal+legend) + saved */
+  #export-area { grid-column: 1; grid-row: 2; }
+  #saved-card  { grid-column: 1; grid-row: 3; }
+
+  /* Kolom kanan: semua panel */
+  .side-panel {
+    grid-column: 2;
+    grid-row: 2 / 5;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    overflow-x: visible;
+    scrollbar-width: thin;
+    scrollbar-color: var(--bord2) transparent;
+    padding-right: 4px;
+    padding-bottom: 20px;
+  }
+  .side-panel::-webkit-scrollbar { width: 4px; }
+  .side-panel::-webkit-scrollbar-track { background: transparent; }
+  .side-panel::-webkit-scrollbar-thumb { background: var(--bord2); border-radius: 99px; }
+
+  /* Kalender lebih besar */
+  .dc { min-height: 100px; padding: 9px 6px 8px; }
+  .dc-num { font-size: 15px; }
+  .dc-sh  { font-size: 9px; }
+  .dc-nm  { font-size: 8px; }
+
+  /* Month label lebih besar */
+  .month-label { font-size: clamp(32px,4vw,52px); }
+
+  /* Tombol export/backup tidak overlap panel */
+  .export-btn { bottom: 30px; }
+
+  /* Card di panel kanan: ikuti state buka/tutup seperti mobile */
+  .side-panel .collapse { max-height: 0; overflow: hidden; }
+  .side-panel .collapse.open { max-height: 2400px; }
+
+  /* Nav btn lebih besar */
+  .nav-btn { width: 52px; height: 52px; font-size: 26px; }
+}
+
+@media(min-width:1100px){
+  .page { grid-template-columns: 1fr 420px; }
+}
+
+</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+<div class="ambient" id="ambient">
+  <div class="amb-blob" id="blob1"></div>
+  <div class="amb-blob" id="blob2"></div>
+  <div class="amb-blob" id="blob3"></div>
+</div>
+
+<!-- CONTROL BAR -->
+<div class="ctrl-bar" id="ctrl-bar">
+  <button class="dark-btn" onclick="toggleDark()" id="dark-btn">🌙</button>
+  <div class="swatch-wrap">
+    <div class="swatch-row" id="swatch-row">
+      <div class="swatch active" data-c="sky"      data-label="Biru Langit" onclick="setColor('sky')"></div>
+      <div class="swatch"        data-c="sage"     data-label="Sage Green"  onclick="setColor('sage')"></div>
+      <div class="swatch"        data-c="rose"     data-label="Dusty Rose"  onclick="setColor('rose')"></div>
+      <div class="swatch"        data-c="lavender" data-label="Lavender"    onclick="setColor('lavender')"></div>
+      <div class="swatch"        data-c="terra"    data-label="Terracotta"  onclick="setColor('terra')"></div>
+    </div>
+    <div class="swatch-trigger" id="swatch-trigger" onclick="toggleSwatches()"></div>
+  </div>
+</div>
+
+<div class="page">
+
+  <div class="header">
+    <div class="header-card">
+      <div class="hd-shape hd-shape-1"></div>
+      <div class="hd-shape hd-shape-2"></div>
+      <div class="hd-shape hd-shape-3"></div>
+      <div class="header-pill"><div class="pill-dot"></div> Jadwal Dinas</div>
+      <div class="header-title">Kalender</div>
+      <div class="header-sub">Pantau shift &amp; cuti dengan mudah ✦</div>
+    </div>
+  </div>
+
+  <div id="export-area" style="background:var(--bg,#f4f6f9);padding:16px 0 8px">
+
+  <!-- Banner judul khusus screenshot (hanya muncul saat export) -->
+  <div class="export-title-banner" id="export-title-banner">
+    <div class="etb-month" id="etb-month-name">—</div>
+    <div class="etb-year"  id="etb-year-name">—</div>
+  </div>
+
+  <div class="month-nav">
+    <button class="nav-btn" onclick="changeMonth(-1)">‹</button>
+    <div class="month-label-wrap" onclick="openMPicker()">
+      <div class="month-label" id="month-name">—</div>
+      <div class="month-sub"   id="month-year">—</div>
+    </div>
+    <button class="nav-btn" onclick="changeMonth(1)">›</button>
+  </div>
+
+  <div class="cal-wrap" id="cal-wrap">
+    <div class="day-row">
+      <div class="day-lbl min-lbl">Min</div><div class="day-lbl">Sen</div><div class="day-lbl">Sel</div>
+      <div class="day-lbl">Rab</div><div class="day-lbl">Kam</div><div class="day-lbl">Jum</div><div class="day-lbl sab-lbl">Sab</div>
+    </div>
+    <div class="cal-grid" id="cal-grid"></div>
+  </div>
+
+  <div class="legend" id="legend"></div>
+  </div><!-- /export-area -->
+
+  <div class="side-panel">
+
+  <!-- Jatah Cuti Card -->
+  <div class="card" id="jatah-cuti-card">
+    <div class="card-hd" onclick="toggleCard('jatah-cuti-b','jatah-cuti-c')">
+      <div class="card-hd-l"><div class="card-icon" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9)">🏖️</div><div class="card-title">Jatah Cuti</div></div>
+      <span class="chev" id="jatah-cuti-c">▼</span>
+    </div>
+    <div class="collapse" id="jatah-cuti-b">
+      <div class="card-body">
+        <div id="jatah-cuti-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hd" onclick="toggleAjukan()">
+      <div class="card-hd-l"><div class="card-icon" style="background:linear-gradient(135deg,var(--pagi-l),var(--lepas-l))">✦</div><div class="card-title">Ajukan Cuti</div></div>
+      <span class="chev" id="ajukan-c">▼</span>
+    </div>
+    <div class="collapse" id="ajukan-b">
+      <div class="card-body">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+          <p style="font-size:12px;color:var(--txt3);margin:0;line-height:1.7">Klik tanggal <b style="color:var(--pagi)">Pagi 🌅</b> atau <b style="color:var(--siang)">Siang ☀️</b>.</p>
+          <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;margin-left:10px">
+            <span style="font-size:11px;color:var(--txt3);white-space:nowrap">Boleh barengan</span>
+            <div class="tog-wrap" id="tog-bareng" onclick="toggleBareng()">
+              <div class="tog-knob"></div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;margin-bottom:4px">
+          <div style="flex:1"><div class="sum-lbl" style="color:var(--pagi)" id="pagi-lbl">🌅 Pagi bisa cuti</div><div class="chips" id="pagi-chips"></div></div>
+          <div style="flex:1"><div class="sum-lbl" style="color:var(--siang)" id="siang-lbl">☀️ Siang bisa cuti</div><div class="chips" id="siang-chips"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hd" onclick="toggleCard('karya-b','karya-c')">
+      <div class="card-hd-l"><div class="card-icon" style="background:var(--malam-l)">👥</div><div class="card-title">Cuti Karyawan Lain</div></div>
+      <span class="chev" id="karya-c">▼</span>
+    </div>
+    <div class="collapse" id="karya-b">
+      <div class="card-body">
+        <div class="radio-tabs">
+          <div class="rtab active" id="tab-b" onclick="setCutiMode('biasa')">Biasa</div>
+          <div class="rtab" id="tab-p" onclick="setCutiMode('pola')">Bebas</div>
+        </div>
+        <div id="form-biasa">
+          <div class="two-col">
+            <div class="fgrp"><div class="flabel">Nama</div><input class="inp" id="b-nama" placeholder="Nama karyawan"/></div>
+            <div class="fgrp"><div class="flabel">Tanggal (pisah koma)</div><input class="inp" id="b-tgl" placeholder="3, 4, 5"/></div>
+          </div>
+          <button class="btn w100" onclick="addBiasa()">+ Tambah Cuti</button>
+        </div>
+        <div id="form-pola" style="display:none">
+          <p style="font-size:11px;color:var(--txt3);margin-bottom:12px;line-height:1.6">Tanggal cuti akan tampil <b>pudar</b> sebagai kemungkinan. Klik tanggal di kalender untuk konfirmasi.</p>
+          <div class="two-col">
+            <div class="fgrp"><div class="flabel">Nama</div><input class="inp" id="p-nama" placeholder="Nama"/></div>
+            <div class="fgrp"><div class="flabel">Posisi tgl 1</div>
+              <select class="inp" id="p-pos" onchange="previewPola()">
+                <option value="0">Pagi ke-1</option><option value="1">Pagi ke-2</option>
+                <option value="2">Siang ke-1</option><option value="3">Siang ke-2</option>
+                <option value="4">Malam ke-1</option><option value="5">Malam ke-2</option>
+                <option value="6">Lepas</option><option value="7">Libur</option>
+              </select>
+            </div>
+          </div>
+          <div class="fgrp" style="margin-top:9px"><div class="flabel">Tipe pola</div>
+            <select class="inp" id="p-tipe" onchange="previewPola()">
+              <option value="LLC">LLC — 1 hari cuti</option>
+              <option value="LLCC">LLCC — 2 hari cuti</option>
+              <option value="LLCCC">LLCCC — 3 hari cuti</option>
+            </select>
+          </div>
+          <div class="pola-pv" id="pola-pv"></div>
+          <button class="btn w100" onclick="addPola()" style="margin-top:10px">+ Tambah Kemungkinan</button>
+        </div>
+        <div class="k-list" id="k-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hd" onclick="toggleCard('swap-b','swap-c')">
+      <div class="card-hd-l"><div class="card-icon" style="background:var(--lepas-l)">🔄</div><div class="card-title">Tukar / Ganti Jadwal</div></div>
+      <span class="chev" id="swap-c">▼</span>
+    </div>
+    <div class="collapse" id="swap-b">
+      <div class="card-body">
+        <div class="radio-tabs">
+          <div class="rtab active" id="stab1" onclick="setSwapMode('sehari')">Sehari</div>
+          <div class="rtab" id="stab2" onclick="setSwapMode('cudak')">CUDAK</div>
+          <div class="rtab" id="stab3" onclick="setSwapMode('perm')">Ubah Pola</div>
+        </div>
+        <div id="sw-sehari">
+          <p style="font-size:11px;color:var(--txt3);margin-bottom:12px">Tukar shift 1 hari saja.</p>
+          <div class="two-col">
+            <div class="fgrp"><div class="flabel">Tanggal</div><input class="inp" type="number" id="sw1-tgl" min="1" max="31" placeholder="Tgl"/></div>
+            <div class="fgrp"><div class="flabel">Ganti jadi</div>
+              <select class="inp" id="sw1-sh">
+                <option value="Pagi">🌅 Pagi</option><option value="Siang">☀️ Siang</option>
+                <option value="Malam">🌙 Malam</option><option value="Lepas">🔓 Lepas</option><option value="Libur">😴 Libur</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn sec w100" onclick="addSwapSehari()">Terapkan</button>
+        </div>
+        <div id="sw-cudak" style="display:none">
+          <div class="cudak-box"><span style="font-size:20px">🌸</span>
+            <div><div style="font-size:11px;font-weight:700;color:var(--cudak)">CUDAK — Cuti Dadakan</div><div style="font-size:10px;color:var(--txt3)">Tandai sebagai cuti mendadak</div></div>
+          </div>
+          <div class="fgrp"><div class="flabel">Tanggal CUDAK</div><input class="inp" type="number" id="cudak-tgl" min="1" max="31" placeholder="Tgl"/></div>
+          <button class="btn prp w100" onclick="addCudak()">🌸 Tandai CUDAK</button>
+        </div>
+        <div id="sw-perm" style="display:none">
+          <p style="font-size:11px;color:var(--txt3);margin-bottom:12px">Mulai tanggal ini, siklus bergeser permanen.</p>
+          <div class="two-col">
+            <div class="fgrp"><div class="flabel">Mulai tanggal</div><input class="inp" type="number" id="sw3-tgl" min="1" max="31" placeholder="Tgl" oninput="previewPerm()"/></div>
+            <div class="fgrp"><div class="flabel">Jadi shift</div>
+              <select class="inp" id="sw3-sh" onchange="previewPerm()">
+                <option value="0">Pagi ke-1</option><option value="1">Pagi ke-2</option>
+                <option value="2">Siang ke-1</option><option value="3">Siang ke-2</option>
+                <option value="4">Malam ke-1</option><option value="5">Malam ke-2</option>
+                <option value="6">Lepas</option><option value="7">Libur</option>
+              </select>
+            </div>
+          </div>
+          <div class="pola-pv" id="perm-pv"></div>
+          <button class="btn sec w100" onclick="addSwapPerm()" style="margin-top:10px">Terapkan Permanen</button>
+        </div>
+        <div class="sw-list" id="sw-list"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="popup-overlay" id="popup-overlay" style="display:none" onclick="closePopup()"></div>
+<div class="day-popup" id="day-popup" style="display:none">
+  <button class="popup-close" onclick="closePopup()">✕</button>
+  <div class="popup-header">
+    <div>
+      <div class="popup-date" id="popup-date">—</div>
+      <div class="popup-dayname" id="popup-dayname">—</div>
+    </div>
+    <div class="popup-shift-badge">
+      <div class="popup-em" id="popup-em">—</div>
+      <div class="popup-sh" id="popup-sh" style="color:var(--acc)">—</div>
+    </div>
+  </div>
+  <div id="popup-body"></div>
+</div>
+
+<!-- Month Picker Modal -->
+<div id="mpicker-overlay" class="mpicker-overlay" onclick="closeMPickerIfBg(event)">
+  <div class="mpicker-box">
+    <div class="mpicker-year-row">
+      <button class="mpicker-yr-btn" onclick="mpickerYearChange(-1)">‹</button>
+      <span class="mpicker-year-label" id="mpicker-year-label">2026</span>
+      <button class="mpicker-yr-btn" onclick="mpickerYearChange(1)">›</button>
+    </div>
+    <div class="mpicker-months" id="mpicker-months"></div>
+    <button class="mpicker-today-btn" onclick="goToToday()">📍 Hari Ini</button>
+  </div>
+</div>
+
+<!-- Data Export/Import Modal -->
+<div id="data-modal-overlay" class="data-modal-overlay" onclick="closeDataModalIfBg(event)">
+  <div class="data-modal">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+      <h3>💾 Backup & Restore</h3>
+      <button class="exp-close" onclick="closeDataModal()">✕</button>
+    </div>
+    <p>Export data untuk backup, atau import data dari backup sebelumnya.</p>
+    <textarea class="data-textarea" id="data-textarea" placeholder="Data akan muncul di sini..."></textarea>
+    <div class="data-actions">
+      <button class="dat-btn dat-btn-copy" onclick="exportData()">📋 Export & Copy</button>
+      <button class="dat-btn dat-btn-import" onclick="importData()">📥 Import</button>
+      <button class="dat-btn dat-btn-reset" onclick="resetData()">🗑 Reset</button>
+    </div>
+  </div>
+</div>
+  <!-- Lembur Card -->
+  <div class="card">
+    <div class="card-hd" onclick="toggleCard('lembur-b','lembur-c')">
+      <div class="card-hd-l"><div class="card-icon" style="background:linear-gradient(135deg,#fff3cd,#ffe08a)">⚡</div><div class="card-title">Lembur</div></div>
+      <span class="chev" id="lembur-c">▼</span>
+    </div>
+    <div class="collapse" id="lembur-b">
+      <div class="card-body">
+        <!-- Input manual lembur -->
+        <div style="display:flex;gap:8px;align-items:flex-end;margin-bottom:14px;flex-wrap:wrap">
+          <div style="flex:1;min-width:60px">
+            <div style="font-size:10px;color:var(--txt3);margin-bottom:4px;font-weight:600">TGL</div>
+            <input id="lem-tgl" type="number" min="1" max="31" placeholder="21" style="width:100%;padding:9px 12px;border-radius:10px;border:1.5px solid var(--bord);background:var(--surf);color:var(--txt);font-size:13px;font-family:'DM Sans',system-ui,sans-serif;box-sizing:border-box">
+          </div>
+          <div style="flex:2;min-width:100px">
+            <div style="font-size:10px;color:var(--txt3);margin-bottom:4px;font-weight:600">JAM LEMBUR</div>
+            <select id="lem-jam" onchange="checkLemburCustom()" style="width:100%;padding:9px 12px;border-radius:10px;border:1.5px solid var(--bord);background:var(--surf);color:var(--txt);font-size:13px;font-family:'DM Sans',system-ui,sans-serif;box-sizing:border-box">
+              <option value="3">3 jam</option>
+              <option value="6" selected>6 jam (Pagi/Siang)</option>
+              <option value="9">9 jam (Malam)</option>
+              <option value="custom">Lainnya...</option>
+            </select>
+            <input id="lem-jam-custom" type="number" min="1" max="24" placeholder="Jam (1-24)" style="display:none;width:100%;margin-top:6px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--acc);background:var(--surf);color:var(--txt);font-size:13px;font-family:'DM Sans',system-ui,sans-serif;box-sizing:border-box">
+          </div>
+          <button class="btn primary" onclick="addLemburManual()" style="padding:10px 16px;border-radius:10px;flex-shrink:0">+ Tambah</button>
+        </div>
+        <div id="lembur-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Backup Card -->
+  <div class="card">
+    <div class="card-hd" onclick="toggleCard('backup-b','backup-c')">
+      <div class="card-hd-l"><div class="card-icon" style="background:linear-gradient(135deg,var(--pagi-l),var(--siang-l))">💾</div><div class="card-title">Backup & Restore</div></div>
+      <span class="chev" id="backup-c">▼</span>
+    </div>
+    <div class="collapse" id="backup-b">
+      <div class="card-body">
+        <p style="font-size:12px;color:var(--txt3);margin:0 0 12px">Export data untuk backup, atau import dari backup sebelumnya.</p>
+        <textarea class="data-textarea" id="data-textarea" placeholder="Data akan muncul di sini..."></textarea>
+        <div class="data-actions">
+          <button class="dat-btn dat-btn-copy" onclick="exportData()">📋 Export & Copy</button>
+          <button class="dat-btn dat-btn-import" onclick="importData()">📥 Import</button>
+          <button class="dat-btn dat-btn-reset" onclick="resetData()">🗑 Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /side-panel -->
+
+<!-- Export Button -->
+<button class="export-btn" onclick="openExport()" title="Export Gambar" style="bottom:22px">📷</button>
+
+<!-- Export Modal -->
+<div id="export-modal-overlay" class="export-modal-overlay" onclick="closeExportIfBg(event)">
+  <div class="export-modal">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+      <h3>Export Kalender</h3>
+      <button class="exp-close" onclick="closeExport()">✕</button>
+    </div>
+    <p id="exp-month-label">Preview kalender bulan ini</p>
+    <div class="export-preview" id="exp-preview"><div class="exp-loading">⏳ Generating...</div></div>
+    <div class="export-actions">
+      <button class="exp-btn exp-btn-dl" onclick="downloadImg()">⬇️ Download</button>
+      <button class="exp-btn exp-btn-sh" onclick="shareImg()">📤 Share</button>
+      <button class="exp-btn" onclick="closeExport()" style="background:var(--bg2);color:var(--txt2);border:1.5px solid var(--bord);flex:0 0 auto;padding:13px 18px;">Batal</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal ubah jatah cuti -->
+<div id="jatah-edit-overlay" style="display:none;position:fixed;inset:0;z-index:1200;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);align-items:center;justify-content:center;" onclick="closeJatahEdit(event)">
+  <div style="background:var(--surf);border-radius:20px;padding:28px 24px 24px;width:90%;max-width:340px;box-shadow:var(--sh3);animation:slideUp .28s cubic-bezier(.16,1,.3,1) both;" onclick="event.stopPropagation()">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+      <div style="font-family:'DM Serif Display',serif;font-size:18px;color:var(--txt)">Ubah Jatah Cuti</div>
+      <button onclick="document.getElementById('jatah-edit-overlay').style.display='none'" style="background:none;border:none;font-size:20px;color:var(--txt3);cursor:pointer">✕</button>
+    </div>
+    <div style="font-size:12px;color:var(--txt3);margin-bottom:10px">Jatah cuti per tahun (hari)</div>
+    <input id="jatah-edit-input" type="number" min="1" max="365"
+      style="width:100%;box-sizing:border-box;padding:12px 14px;border-radius:12px;border:1.5px solid var(--bord);background:var(--bg);color:var(--txt);font-size:22px;font-weight:700;font-family:'DM Sans',system-ui,sans-serif;text-align:center;outline:none;-moz-appearance:textfield;"
+      onkeydown="if(event.key==='Enter')saveJatahEdit()"
+    />
+    <div style="display:flex;gap:10px;margin-top:18px">
+      <button onclick="document.getElementById('jatah-edit-overlay').style.display='none'" style="flex:1;padding:12px;border-radius:12px;border:1.5px solid var(--bord);background:var(--bg2);color:var(--txt2);font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',system-ui,sans-serif;">Batal</button>
+      <button onclick="saveJatahEdit()" style="flex:2;padding:12px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',system-ui,sans-serif;">✅ Simpan</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const CYCLE=['Pagi','Pagi','Siang','Siang','Malam','Malam','Lepas','Libur'];
+const EMOJ={Pagi:'🌅',Siang:'☀️',Malam:'🌙',Lepas:'🔓',Libur:'😴'};
+const DNAMES=['Min','Sen','Sel','Rab','Kam','Jum','Sab'];
+const MNAMES=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+const ANC={y:2026,m:0,d:1,pos:5};
+const PAL=['#e87878','#e8a478','#d4c060','#88c880','#60b8d4','#8898e8','#c888e0','#e878b8','#78d8b8','#a0c878','#e8c878','#c8a0e0'];
+const _now0=new Date(); let palIdx=0, curY=_now0.getFullYear(), curM=_now0.getMonth(), monthState={}, permShifts=[], allowBareng=false;
+let cutiJatah=12, cutiStartYear=2026; // jatah cuti per tahun
+
+// Data karyawan diisi manual atau via import localStorage
+
+/* Blob colors per theme */
+const BLOB_COLORS={
+  sky: ['linear-gradient(circle,#b8ddf0,#8ec8e8)','linear-gradient(circle,#e8d8f0,#d4c0e8)','linear-gradient(circle,#fde8d8,#f5d0b8)'],
+  sage:['linear-gradient(circle,#c8e6ca,#a5d6a7)','linear-gradient(circle,#e8d8f0,#d4c0e8)','linear-gradient(circle,#fde8d8,#f5d0b8)'],
+  rose:['linear-gradient(circle,#f8d4da,#f0b8c4)','linear-gradient(circle,#ead4e8,#d8b8d4)','linear-gradient(circle,#fde8d8,#f5d0b8)'],
+  lavender:['linear-gradient(circle,#dcd4f4,#c8c0ec)','linear-gradient(circle,#e8d4f0,#d8b8e4)','linear-gradient(circle,#fde8d8,#f5d0b8)'],
+  terra:['linear-gradient(circle,#f0d0b8,#e8b898)','linear-gradient(circle,#e8d0c0,#d8b8a8)','linear-gradient(circle,#fce8c8,#f4d0a8)'],
+};
+
+function updateBlobs(color){
+  const cols=BLOB_COLORS[color]||BLOB_COLORS.sky;
+  ['blob1','blob2','blob3'].forEach((id,i)=>{
+    const el=document.getElementById(id);
+    if(el) el.style.background=cols[i].replace('linear-gradient','radial-gradient').replace('linear-gradient','radial-gradient');
+    // just set as background directly
+    if(el) el.style.background=cols[i].replace('linear-gradient(circle,','radial-gradient(circle,');
+  });
+}
+// Simplified: just set inline style
+function setBlobBg(){
+  const color=currentColor;
+  const c=BLOB_COLORS[color]||BLOB_COLORS.sky;
+  const _b1=document.getElementById('blob1'); if(_b1) _b1.style.background=`radial-gradient(circle, ${c[0].split(',').slice(1).join(',').replace(')','').trim()})`;
+}
+
+
+// Data resmi SKB 3 Menteri No.1497/2025 — Setneg RI (19 Sep 2025)
+// 17 Hari Libur Nasional + 8 Cuti Bersama
+const LIBUR_NASIONAL = {
+  // Januari
+  '2026-1-1':  'Tahun Baru 2026 Masehi',        // Libur
+  '2026-1-16': 'Isra Mikraj Nabi Muhammad SAW',  // Libur
+  // Februari
+  '2026-2-17': 'Tahun Baru Imlek 2577',          // Libur
+  '2026-2-16': '🟡 Cuti Bersama Imlek',
+  // Maret
+  '2026-3-19': 'Hari Suci Nyepi (Saka 1948)',    // Libur
+  '2026-3-18': '🟡 Cuti Bersama Nyepi',
+  '2026-3-20': '🟡 Cuti Bersama Idul Fitri',
+  '2026-3-21': 'Idul Fitri 1447 H (Hari 1)',     // Libur
+  '2026-3-22': 'Idul Fitri 1447 H (Hari 2)',     // Libur
+  '2026-3-23': '🟡 Cuti Bersama Idul Fitri',
+  '2026-3-24': '🟡 Cuti Bersama Idul Fitri',
+  // April
+  '2026-4-3':  'Wafat Yesus Kristus',            // Libur
+  '2026-4-5':  'Kebangkitan Yesus Kristus',      // Libur
+  // Mei
+  '2026-5-1':  'Hari Buruh Internasional',       // Libur
+  '2026-5-14': 'Kenaikan Yesus Kristus',         // Libur
+  '2026-5-15': '🟡 Cuti Bersama Kenaikan',
+  '2026-5-27': 'Hari Raya Idul Adha 1447 H',    // Libur
+  '2026-5-28': '🟡 Cuti Bersama Idul Adha',
+  '2026-5-31': 'Hari Raya Waisak 2570 BE',       // Libur
+  // Juni
+  '2026-6-1':  'Hari Lahir Pancasila',           // Libur
+  '2026-6-16': 'Tahun Baru Islam 1448 H',        // Libur
+  // Agustus
+  '2026-8-17': 'HUT RI ke-81',                  // Libur
+  '2026-8-25': 'Maulid Nabi Muhammad SAW',       // Libur
+  // Desember
+  '2026-12-24':'🟡 Cuti Bersama Natal',
+  '2026-12-25':'Hari Raya Natal',                // Libur
+};
+function isLiburNasional(y,m,d){ return LIBUR_NASIONAL[y+'-'+(m+1)+'-'+d] || null; }
+
+function key(y,m){return`${y}-${m}`}
+function getMS(){
+  const k=key(curY,curM);
+  if(!monthState[k]){
+    const karya=[];
+    monthState[k]={karyawan:karya,saved:new Set(),swaps:{},cudak:new Set()};
+  }
+  return monthState[k];
+}
+function daysSince(y,m,d){return Math.round((new Date(y,m,d)-new Date(ANC.y,ANC.m,ANC.d))/86400000)}
+function basePosAt(y,m,d){return((ANC.pos+daysSince(y,m,d))%8+8)%8}
+function getShift(y,m,d){
+  const ms=getMS();
+  if(ms.swaps&&ms.swaps[d]) return ms.swaps[d];
+  if(ms.cudak&&ms.cudak.has(d)) return 'CUDAK';
+  let ov=null,best=-Infinity;
+  permShifts.forEach(ps=>{const pd=daysSince(ps.fy,ps.fm,ps.fd),td=daysSince(y,m,d);if(td>=pd&&pd>best){best=pd;ov=((ps.newPos+(td-pd))%8+8)%8}});
+  if(ov!==null) return CYCLE[ov];
+  return CYCLE[basePosAt(y,m,d)];
+}
+function dim(y,m){return new Date(y,m+1,0).getDate()}
+function dn(y,m,d){return DNAMES[new Date(y,m,d).getDay()]}
+function getBlocked(){
+  const bl={}, bm={};
+  getMS().karyawan.forEach(k=>{
+    k.dates.forEach(d=>{if(!bl[d])bl[d]=[];bl[d].push({nama:k.nama,color:k.color})});
+    (k.maybes||[]).forEach(d=>{if(!bm[d])bm[d]=[];bm[d].push({nama:k.nama,color:k.color})});
+  });
+  return{bl,bm};
+}
+function getBlockedFirm(){return getBlocked().bl;}
+function getBlockedMaybe(){return getBlocked().bm;}
+function canCuti(d){const sh=getShift(curY,curM,d);if(sh!=='Pagi'&&sh!=='Siang')return false;if(allowBareng)return true;const bl=getBlockedFirm();return!(bl[d]&&bl[d].length>0);}
+
+function render(){try{
+  const _ajb2=document.getElementById('ajukan-b');document.body.classList.toggle('selecting',_ajb2?_ajb2.classList.contains('open'):false);
+  const _mn=document.getElementById('month-name'); if(_mn) _mn.textContent=MNAMES[curM];
+  const _my=document.getElementById('month-year'); if(_my) _my.textContent=String(curY);
+  renderCal();renderSummary();renderKList();renderSwList();renderLegend();renderSavedList();renderLembur();renderJatahCuti();
+  try{saveLocal();}catch(e){}
+}catch(e){console.error('render error:',e);}}
+function buildCell(d){
+  const sh=getShift(curY,curM,d),ms=getMS(),bl=getBlockedFirm(),bm=getBlockedMaybe();
+  const _now=new Date(),isToday=(curY===_now.getFullYear()&&curM===_now.getMonth()&&d===_now.getDate());
+  const _dow=new Date(curY,curM,d).getDay(); // 0=Min,6=Sab
+  const _libnasName=isLiburNasional(curY,curM,d);
+  const isCudak=sh==='CUDAK',realSh=isCudak?CYCLE[basePosAt(curY,curM,d)]:sh;
+  const tbl=bl[d]||[],tml=bm[d]||[],isSaved=ms.saved.has(d),isAvail=canCuti(d)&&!isSaved,isSwap=ms.swaps&&ms.swaps[d];
+  const isMaybe=tml.length>0&&!isSaved;
+  let cls='dc ';
+  if(isCudak)cls+='cudak-c';
+  else if(isSaved)cls+='saved-cuti';
+  else cls+=realSh.toLowerCase()+'-c';
+  if(isAvail)cls+=' avail';else if((sh==='Pagi'||sh==='Siang')&&tbl.length>0&&!isSaved)cls+=' blk';
+  if(isSwap)cls+=' swapped';
+  if(isToday)cls+=' today';
+  if(_dow===0||_libnasName)cls+=' minggu';
+  else if(_dow===6)cls+=' sabtu';
+  if(_libnasName)cls+=' libnas';
+  const dots=tbl.map(t=>`<div class="dot" style="background:${t.color}"></div>`).join('');
+  const maybeDots=tml.map(t=>`<div class="maybe-dot" style="background:${t.color};opacity:.5"></div>`).join('');
+  const dispSh=isCudak?'CUDAK 🌸':(isSaved?'CUTI ✓':sh.toUpperCase());
+    const _lem=getMS().lembur[d];
+  const _lemHtml=_lem?`<div class="lembur-badge">⚡${_lem}j</div>`:'';
+  if(_lem) cls+=' lembur-c';
+  return{cls:cls.trim(),inner:`<div class="dc-num">${d}</div><div class="dc-nm">${dn(curY,curM,d)}</div>${_lemHtml}<div class="dc-em">` +
+    `${EMOJ[realSh]||'🌸'}</div><div class="dc-sh">${dispSh}</div>` +
+    `<div class="dots">${dots}${maybeDots}</div>` +
+    `${isSwap&&!isSaved?'<div class="swap-b">↔</div>':''}`};
+}
+function renderCal(skipGrowD){
+  const total=dim(curY,curM),offset=new Date(curY,curM,1).getDay(),grid=document.getElementById('cal-grid');
+  if(!grid)return;
+  if(grid.children.length!==offset+total){
+    // Full rebuild — stagger with cellGrow
+    let h='';for(let i=0;i<offset;i++)h+='<div></div>';
+    for(let d=1;d<=total;d++){const{cls,inner}=buildCell(d);h+=`<div class="${cls}" onclick="togglePending(${d}, event)" data-d="${d}">${inner}</div>`;}
+    grid.innerHTML=h;
+    return;
+  }
+  // Partial update — update className carefully, never strip click-grow mid-animation
+  grid.querySelectorAll('[data-d]').forEach(cell=>{
+    const d=parseInt(cell.dataset.d);
+    const{cls,inner}=buildCell(d);
+    const growing=cell.classList.contains('click-grow');
+    cell.className=growing?cls+' click-grow':cls;
+    if(cell.innerHTML!==inner) cell.innerHTML=inner;
+  });
+}
+function renderSummary(){
+  const total=dim(curY,curM),elig=[];for(let d=1;d<=total;d++)if(canCuti(d))elig.push(d);
+  const pagi=elig.filter(d=>getShift(curY,curM,d)==='Pagi'),siang=elig.filter(d=>getShift(curY,curM,d)==='Siang');
+  const _pc=document.getElementById('pagi-chips'),_sc=document.getElementById('siang-chips');if(!_pc||!_sc)return;
+  _pc.innerHTML=pagi.length?pagi.map((d,i)=>`<span class="chip pagi">${i<2?'⭐ ':''}${d}</span>`).join(''):'<span class="empty-txt">Tidak ada</span>';
+  _sc.innerHTML=siang.length?siang.map(d=>`<span class="chip siang">${d}</span>`).join(''):'<span class="empty-txt">Tidak ada</span>';
+}
+
+function getTotalCutiTerpakai(untilY, untilM){
+  // Hitung total cuti terpakai dari Januari cutiStartYear s/d bulan ini
+  let total = 0;
+  for(let y = cutiStartYear; y <= untilY; y++){
+    const mStart = 0;
+    const mEnd = (y === untilY) ? untilM : 11;
+    for(let m = mStart; m <= mEnd; m++){
+      const k = y + '-' + m;
+      if(monthState[k] && monthState[k].saved){
+        total += monthState[k].saved.size;
+      }
+    }
+  }
+  return total;
+}
+
+function getSisaCuti(){
+  const terpakai = getTotalCutiTerpakai(curY, curM);
+  return Math.max(0, cutiJatah - terpakai);
+}
+
+function getCutiBuilanIni(){
+  return getMS().saved.size;
+}
+
+function renderSavedList(){
+  const ms=getMS(),card=document.getElementById('saved-card'),list=document.getElementById('saved-list');
+  if(!card||!list)return;
+  const saved=[...ms.saved].sort((a,b)=>a-b);
+  if(card) card.style.display='block'; // selalu tampil untuk counter
+
+  const bulanIni = saved.length;
+  const terpakai = getTotalCutiTerpakai(curY, curM);
+  const sisa = Math.max(0, cutiJatah - terpakai);
+  const pct = Math.min(100, Math.round((terpakai/cutiJatah)*100));
+  const barColor = sisa<=3 ? '#e05555' : sisa<=6 ? '#f0a020' : 'var(--acc)';
+
+  const counterHtml = `
+    <div style="background:var(--bg2);border-radius:14px;padding:14px 16px;margin-bottom:12px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--txt3);margin-bottom:2px">Jatah Cuti ${cutiStartYear}</div>
+          <div style="display:flex;align-items:baseline;gap:4px">
+            <span style="font-size:28px;font-weight:700;color:${barColor};font-family:'DM Serif Display',serif">${sisa}</span>
+            <span style="font-size:12px;color:var(--txt3)">/ ${cutiJatah} hari tersisa</span>
+          </div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:10px;color:var(--txt3);margin-bottom:2px">Bulan ini</div>
+          <div style="font-size:20px;font-weight:700;color:var(--acc);font-family:'DM Serif Display',serif">${bulanIni} hari</div>
+        </div>
+      </div>
+      <div style="background:var(--bord);border-radius:99px;height:7px;overflow:hidden">
+        <div style="height:100%;width:${pct}%;background:${barColor};border-radius:99px;transition:width .5s cubic-bezier(.16,1,.3,1)"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:5px">
+        <span style="font-size:10px;color:var(--txt3)">${terpakai} hari terpakai</span>
+        <button onclick="editJatahCuti()" style="font-size:10px;color:var(--acc);background:none;border:none;cursor:pointer;padding:0;font-family:'DM Sans',system-ui,sans-serif">✏️ Ubah jatah</button>
+      </div>
+    </div>`;
+
+  if(!saved.length){
+    list.innerHTML = counterHtml + '<div style="font-size:12px;color:var(--txt3);text-align:center;padding:8px 0">Belum ada cuti bulan ini</div>';
+    return;
+  }
+  list.innerHTML = counterHtml + saved.map(d=>{const sh=getShift(curY,curM,d),ip=sh==='Pagi';const bg=ip?'var(--pagi-l)':'var(--siang-l)',bc=ip?'var(--pagi-m)':'var(--siang-m)',tc=ip?'var(--pagi)':'var(--siang)';return`<div style="display:flex;align-items:center;gap:9px;background:var(--bg2);border-radius:11px;padding:9px 14px;margin-bottom:7px"><span style="background:${bg};border:1.5px solid ${bc};color:${tc};padding:3px 12px;border-radius:22px;font-size:12px;font-weight:700">${EMOJ[sh]||''} ${d} ${MNAMES[curM]}</span><span style="font-size:11px;color:var(--txt3);flex:1">${sh}</span><button class="btn sm danger" onclick="batalkanSatuCuti(${d})">Batalkan</button></div>`;}).join('');
+}
+
+function editJatahCuti(){
+  const ov = document.getElementById('jatah-edit-overlay');
+  const inp = document.getElementById('jatah-edit-input');
+  if(!ov||!inp) return;
+  inp.value = cutiJatah;
+  ov.style.display = 'flex';
+  setTimeout(()=>inp.focus(),100);
+}
+function saveJatahEdit(){
+  const inp = document.getElementById('jatah-edit-input');
+  const ov = document.getElementById('jatah-edit-overlay');
+  if(!inp) return;
+  const n = parseInt(inp.value);
+  if(isNaN(n)||n<1||n>365){ showToast('⚠️ Angka tidak valid (1–365)'); return; }
+  cutiJatah = n;
+  try{ localStorage.setItem('cuti-jatah', n); }catch(e){}
+  if(ov) ov.style.display='none';
+  render();
+  showToast(`✅ Jatah cuti diubah: ${n} hari/tahun`);
+}
+function closeJatahEdit(e){
+  if(e.target===document.getElementById('jatah-edit-overlay'))
+    document.getElementById('jatah-edit-overlay').style.display='none';
+}
+
+function batalkanSatuCuti(d){getMS().saved.delete(d);showToast(`🗑 Cuti ${d} ${MNAMES[curM]} dibatalkan`);render();}
+function renderKList(){
+  const k=getMS().karyawan,el=document.getElementById('k-list');
+  if(!k.length){el.innerHTML='<div class="empty-txt">Belum ada karyawan cuti bulan ini.</div>';return;}
+  el.innerHTML=k.map((x,i)=>{
+    const firmDates=[...x.dates].sort((a,b)=>a-b);
+    const maybeDates=[...(x.maybes||[])].sort((a,b)=>a-b);
+    const dateStr=firmDates.length?firmDates.join(', '):'—';
+    const maybeStr=maybeDates.length?` <span style="color:var(--txt3);font-style:italic">(? ${maybeDates.join(', ')})</span>`:'';
+    return`<div class="k-item"><div class="k-dot" style="background:${x.color}"></div><div class="k-name">${x.nama}</div><div class="k-dates">${dateStr}${maybeStr}</div><button class="k-del" onclick="removeKarya(${i})">✕</button></div>`;
+  }).join('');
+}
+function renderSwList(){
+  const ms=getMS(),items=[];
+  Object.entries(ms.swaps||{}).forEach(([d,sh])=>items.push({d:+d,label:`Tgl ${d}: ${EMOJ[sh]} ${sh}`,type:'sehari',did:+d}));
+  (ms.cudak||new Set()).forEach(d=>items.push({d,label:`Tgl ${d}: 🌸 CUDAK`,type:'cudak',did:d}));
+  permShifts.filter(p=>p.fy===curY&&p.fm===curM).forEach(p=>items.push({d:p.fd,label:`Mulai tgl ${p.fd}: → ${EMOJ[CYCLE[p.newPos]]||''} ${CYCLE[p.newPos]}`,type:'perm'}));
+  items.sort((a,b)=>a.d-b.d);
+  const el=document.getElementById('sw-list');
+  if(!items.length){el.innerHTML='<div class="empty-txt">Belum ada perubahan jadwal.</div>';return;}
+  el.innerHTML=items.map(it=>`<div class="sw-item"><span class="sw-badge ${it.type}">${it.type==='sehari'?'Sehari':it.type==='cudak'?'CUDAK':'Permanen'}</span><span style="flex:1;font-size:11px">${it.label}</span>${it.type!=='perm'?`<button class="btn sm danger" onclick="removeSwap('${it.type}',${it.did})">✕</button>`:''}</div>`).join('');
+}
+function renderLegend(){
+  const karya=getMS().karyawan;
+  let h=`<div class="leg-i"><div class="leg-d" style="background:var(--pagi)"></div>Pagi</div><div class="leg-i"><div class="leg-d" style="background:var(--siang)"></div>Siang</div><div class="leg-i"><div class="leg-d" style="background:var(--malam)"></div>Malam</div><div class="leg-i"><div class="leg-d" style="background:var(--lepas)"></div>Lepas</div><div class="leg-i"><div class="leg-d" style="background:var(--libur)"></div>Libur</div><div class="leg-i"><div class="leg-d" style="background:var(--cudak)"></div>CUDAK</div>`;
+  if(karya.length){h+=`<div style="width:100%;height:1px;background:var(--bord);margin:4px 0"></div>`;h+=karya.map(k=>`<div class="leg-i"><div class="leg-d" style="background:${k.color}"></div>${k.nama}</div>`).join('');}
+  const _lg=document.getElementById('legend'); if(_lg) _lg.innerHTML=h;
+}
+
+
+function triggerGrow(cell){
+  if(!cell) return;
+  cell.classList.remove('click-grow');
+  void cell.offsetWidth;
+  cell.classList.add('click-grow');
+  setTimeout(()=>cell.classList.remove('click-grow'), 300);
+}
+
+function togglePending(d, evt){
+  const cell = evt ? (evt.currentTarget || evt.target.closest('.dc')) : null;
+  const _ajb=document.getElementById('ajukan-b');
+  const ajukanOpen = _ajb?_ajb.classList.contains('open'):false;
+  if(ajukanOpen){
+    const ms=getMS();
+    if(!canCuti(d)&&!ms.saved.has(d)) return; // not eligible — no grow, no action
+    triggerGrow(cell);
+    if(ms.saved.has(d)){ms.saved.delete(d);showToast(`🗑 Cuti ${d} ${MNAMES[curM]} dibatalkan`);}
+    else{ms.saved.add(d);showToast(`✅ Cuti ${d} ${MNAMES[curM]} disimpan!`);}
+    setTimeout(()=>render(), 320);
+  } else {
+    triggerGrow(cell);
+    const _kb=document.getElementById('karya-b');
+    const karyaOpen = _kb?_kb.classList.contains('open'):false;
+    if(karyaOpen){
+      // Konfirmasi maybe hanya saat panel Cuti Karyawan Lain terbuka
+      const bm3=getBlockedMaybe();
+      const ms3=getMS();
+      const confirmedPola=ms3.karyawan.filter(k=>k._origMaybes&&k.dates.includes(d));
+      if(bm3[d]&&bm3[d].length>0){
+        confirmMaybe(d, bm3[d]); return;
+      } else if(confirmedPola.length>0){
+        confirmMaybe(d, confirmedPola.map(k=>({nama:k.nama,color:k.color}))); return;
+      }
+    }
+    showDayPopup(d, evt);
+  }
+}
+
+function showDayPopup(d, evt){
+  const sh = getShift(curY, curM, d);
+  const isCudak = sh === 'CUDAK';
+  const realSh = isCudak ? CYCLE[basePosAt(curY,curM,d)] : sh;
+  const bl = getBlockedFirm();
+  const bm2 = getBlockedMaybe();
+  const tbl = bl[d] || [];
+  const tml = bm2[d] || [];
+  const ms = getMS();
+  const isSaved = ms.saved.has(d);
+
+  document.getElementById('popup-date').textContent = d;
+  document.getElementById('popup-dayname').textContent = dn(curY,curM,d) + ', ' + MNAMES[curM];
+
+  const emoj = EMOJ[realSh] || '🌸';
+  const dispSh = isCudak ? 'CUDAK' : isSaved ? 'CUTI' : sh;
+  document.getElementById('popup-em').textContent = emoj;
+  const shEl = document.getElementById('popup-sh');
+  shEl.textContent = dispSh;
+
+  // Color the shift label
+  const shColors = {Pagi:'var(--pagi)',Siang:'var(--siang)',Malam:'var(--malam)',Lepas:'var(--lepas)',Libur:'var(--libur)',CUDAK:'var(--cudak)'};
+  shEl.style.color = isSaved ? 'var(--acc)' : (shColors[sh] || 'var(--txt2)');
+
+  // Build body
+  const _libnasPopup = isLiburNasional(curY, curM, d);
+  let bodyHtml = '';
+  if(_libnasPopup){
+    bodyHtml += `<div style="background:#fff0f0;border-radius:8px;padding:6px 10px;margin-bottom:8px;font-size:11px;color:#e05555;font-weight:600">🔴 ${_libnasPopup}</div>`;
+  }
+  if(tbl.length > 0){
+    bodyHtml += `<div class="popup-section-lbl">Cuti hari ini</div>`;
+    bodyHtml += tbl.map(t=>`<div class="popup-person"><div class="popup-dot" style="background:${t.color}"></div>${t.nama}</div>`).join('');
+  } else {
+    bodyHtml += `<div class="popup-section-lbl">Cuti hari ini</div><div class="popup-empty">Tidak ada yang cuti</div>`;
+  }
+  if(tml.length > 0){
+    bodyHtml += `<div class="popup-section-lbl" style="margin-top:8px;color:var(--txt3)">Kemungkinan cuti</div>`;
+    bodyHtml += tml.map(t=>`<div class="popup-person" style="opacity:.7"><div class="popup-dot" style="background:${t.color};opacity:.6"></div>${t.nama} <span style="font-size:9px;color:var(--txt3);margin-left:auto">belum pasti</span></div>`).join('');
+  }
+  // Lembur section di popup
+  const _lemCur = getMS().lembur[d] || 0;
+  const _sh4 = getShift(curY,curM,d);
+  const _defJam = _sh4==='Malam' ? 9 : (_sh4==='Pagi'||_sh4==='Siang') ? 6 : 3;
+  bodyHtml += `<div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--bord)">
+    <div style="font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--txt3);margin-bottom:6px">⚡ Lembur</div>
+    <div class="lembur-jam-sel">
+      ${[3,6,9].map(j=>`<button class="lembur-jam-btn${_lemCur===j?' active':''}" onclick="setLembur(${d},${j})">${j}j</button>`).join('')}
+      <button class="lembur-jam-btn${_lemCur&&![3,6,9].includes(_lemCur)?' active':''}" onclick="promptLemburCustom(${d})">✏️</button>
+      ${_lemCur?`<button class="lembur-jam-btn" style="color:#e05555;border-color:#f5c0c0" onclick="setLembur(${d},0)">✕</button>`:''}
+    </div>
+  </div>`;
+  document.getElementById('popup-body').innerHTML = bodyHtml;
+
+  // ── Positioning: anchor popup right next to clicked cell ──
+  const overlay = document.getElementById('popup-overlay');
+  const pop     = document.getElementById('day-popup');
+  overlay.style.display = 'block';
+
+  // Reset, render off-screen first to measure height
+  pop.className   = 'day-popup';
+  pop.style.cssText = 'display:block;visibility:hidden;left:0;top:0;width:160px';
+  const popW = 160;
+  const popH = pop.offsetHeight;          // real measured height
+  pop.style.visibility = '';
+
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const GAP = 4;                          // px gap between cell and popup
+
+  if(evt && evt.currentTarget){
+    const clickedCell = evt.currentTarget;
+    const r    = clickedCell.getBoundingClientRect(); // viewport coords
+
+    const cellCx = r.left + r.width / 2;
+
+    // Prefer below; flip above if not enough room
+    const below = r.bottom + GAP + popH + 8 <= vh;
+    const dir   = below ? 'below' : 'above';
+    const y     = below
+      ? r.bottom + GAP
+      : r.top - GAP - popH;
+
+    // Center on cell, clamp inside viewport
+    let x = cellCx - popW / 2;
+    x = Math.max(8, Math.min(x, vw - popW - 8));
+
+    pop.style.left = x + 'px';
+    pop.style.top  = y + 'px';
+    pop.classList.add('pop-' + dir);
+
+    // Arrow points at cell center
+    const arrowX = Math.max(14, Math.min(cellCx - x, popW - 14));
+    pop.style.setProperty('--arrow-x', arrowX + 'px');
+  } else {
+    pop.style.left = (vw / 2 - popW / 2) + 'px';
+    pop.style.top  = (vh / 2 - popH / 2) + 'px';
+    pop.classList.add('pop-below');
+  }
+}
+
+function closePopup(){
+  const _dp=document.getElementById('day-popup'); if(_dp) _dp.style.display='none';
+  const _po=document.getElementById('popup-overlay'); if(_po) _po.style.display='none';
+}
+let _changingMonth = false;
+function changeMonth(dir){
+  if(_changingMonth) return;
+  _changingMonth = true;
+
+  const lbl = document.getElementById('month-name');
+  const cal = document.getElementById('cal-wrap');
+
+  // Label slide out
+  if(lbl){
+    lbl.style.transition='transform .3s cubic-bezier(.4,0,.2,1)';
+    lbl.style.transform=dir>0?'translateX(-100%)':'translateX(100%)';
+  }
+
+  // Calendar slide out via CSS class
+  if(cal){
+    cal.classList.remove('cal-slide-out-left','cal-slide-out-right','cal-slide-in-left','cal-slide-in-right');
+    void cal.offsetWidth;
+    cal.classList.add(dir>0?'cal-slide-out-left':'cal-slide-out-right');
+  }
+
+  setTimeout(()=>{
+    curM+=dir;
+    if(curM>11){curM=0;curY++;}
+    if(curM<0){curM=11;curY--;}
+    if(curY<2026||(curY===2026&&curM<0)){curY=2026;curM=0;}
+    render();
+
+    // Calendar slide in
+    const cal2 = document.getElementById('cal-wrap');
+    if(cal2){
+      cal2.classList.remove('cal-slide-out-left','cal-slide-out-right','cal-slide-in-left','cal-slide-in-right');
+      void cal2.offsetWidth;
+      cal2.classList.add(dir>0?'cal-slide-in-left':'cal-slide-in-right');
+      cal2.addEventListener('animationend',()=>{
+        cal2.classList.remove('cal-slide-in-left','cal-slide-in-right');
+        _changingMonth=false;
+      },{once:true});
+    } else {
+      _changingMonth=false;
+    }
+
+    // Label slide in
+    if(lbl){
+      lbl.style.transition='none';
+      lbl.style.transform=dir>0?'translateX(100%)':'translateX(-100%)';
+      requestAnimationFrame(()=>{
+        lbl.style.transition='transform .3s cubic-bezier(.4,0,.2,1)';
+        lbl.style.transform='none';
+      });
+    }
+  }, 180);
+}
+function calcPolaDate(posAt1,tipe){
+  const total=dim(curY,curM),numC={'LLC':1,'LLCC':2,'LLCCC':3}[tipe]||1,dates=[];
+  for(let d=1;d<=total;d++){const pos=((posAt1+(d-1))%8+8)%8;if(pos===7&&((posAt1+(d-2))%8+8)%8===6)for(let c=0;c<numC;c++){const cd=d+1+c;if(cd>=1&&cd<=total)dates.push(cd);}}
+  const p0=((posAt1-1)%8+8)%8,pn=((posAt1-2)%8+8)%8;
+  if(p0===7&&pn===6)for(let c=0;c<numC;c++){const cd=1+c;if(cd>=1&&cd<=total)dates.push(cd);}
+  return[...new Set(dates)].sort((a,b)=>a-b);
+}
+function calcAllPolaDate(tipe){
+  // Gabungkan semua kemungkinan dari 8 posisi awal berbeda
+  const all=new Set();
+  for(let pos=0;pos<8;pos++) calcPolaDate(pos,tipe).forEach(d=>all.add(d));
+  return[...all].sort((a,b)=>a-b);
+}
+function previewPola(){const pos=parseInt(document.getElementById('p-pos').value),tipe=document.getElementById('p-tipe').value,dates=calcPolaDate(pos,tipe),el=document.getElementById('pola-pv');el.textContent=dates.length?`Kemungkinan cuti: tgl ${dates.join(', ')}`:'Tidak ada LLC di bulan ini.';el.classList.toggle('vis',dates.length>0);}
+function addBiasa(){
+  const nama=document.getElementById('b-nama').value.trim(),raw=document.getElementById('b-tgl').value.trim();
+  if(!nama||!raw){showToast('⚠️ Nama dan tanggal wajib diisi!');return;}
+  const dates=raw.split(',').map(s=>parseInt(s.trim())).filter(n=>!isNaN(n)&&n>=1&&n<=31);
+  if(!dates.length){showToast('⚠️ Tanggal tidak valid!');return;}
+  const k=getMS().karyawan,ex=k.find(x=>x.nama.toLowerCase()===nama.toLowerCase());
+  if(ex)dates.forEach(d=>{if(!ex.dates.includes(d))ex.dates.push(d)});else k.push({nama,dates,color:PAL[palIdx++%PAL.length]});
+  document.getElementById('b-nama').value='';document.getElementById('b-tgl').value='';showToast(`✅ Cuti ${nama} ditambahkan`);render();
+}
+function addPola(){
+  const nama=document.getElementById('p-nama').value.trim(),pos=parseInt(document.getElementById('p-pos').value),tipe=document.getElementById('p-tipe').value;
+  if(!nama){showToast('⚠️ Nama wajib diisi!');return;}
+  const maybes=calcPolaDate(pos,tipe);
+  if(!maybes.length){showToast('Tidak ada LLC di bulan ini');return;}
+  const k=getMS().karyawan,ex=k.find(x=>x.nama.toLowerCase()===nama.toLowerCase());
+  if(ex){
+    maybes.forEach(d=>{if(!(ex.maybes||[]).includes(d)&&!ex.dates.includes(d)){ex.maybes=ex.maybes||[];ex.maybes.push(d);}});
+  } else {
+    k.push({nama,dates:[],maybes,color:PAL[palIdx++%PAL.length]});
+  }
+  document.getElementById('p-nama').value='';
+  document.getElementById('pola-pv').classList.remove('vis');
+  showToast(`✅ ${nama} — ${maybes.length} kemungkinan tgl cuti ditampilkan`);
+  render();
+}
+
+function confirmMaybe(d, persons){
+  const ms=getMS();
+  persons.forEach(p=>{
+    const k=ms.karyawan.find(x=>x.nama===p.nama);
+    if(!k) return;
+    if(k.dates.includes(d)){
+      // Sudah pasti → batalkan: kembalikan semua maybes asal dari _origMaybes
+      k.dates=k.dates.filter(x=>x!==d);
+      k.maybes=[...(k._origMaybes||[])];
+      showToast(`↩️ Cuti ${p.nama} tgl ${d} dibatalkan`);
+    } else {
+      // Belum pasti → konfirmasi: simpan maybes asli, hapus semua maybes, tambah ke dates
+      k._origMaybes=[...(k.maybes||[])];
+      k.maybes=[];
+      k.dates.push(d);
+      showToast(`✅ Cuti ${p.nama} tgl ${d} dikonfirmasi!`);
+    }
+  });
+  render();
+}
+function removeKarya(i){getMS().karyawan.splice(i,1);render();}
+function addSwapSehari(){
+  const d=parseInt(document.getElementById('sw1-tgl').value),sh=document.getElementById('sw1-sh').value;
+  if(!d||d<1||d>dim(curY,curM)){showToast('⚠️ Tanggal tidak valid!');return;}
+  const ms=getMS();if(!ms.swaps)ms.swaps={};ms.swaps[d]=sh;document.getElementById('sw1-tgl').value='';showToast(`🔄 Tgl ${d} → ${sh}`);render();
+}
+function addCudak(){
+  const d=parseInt(document.getElementById('cudak-tgl').value);if(!d||d<1||d>dim(curY,curM)){showToast('⚠️ Tanggal tidak valid!');return;}
+  const ms=getMS();if(!ms.cudak)ms.cudak=new Set();ms.cudak.add(d);document.getElementById('cudak-tgl').value='';showToast(`🌸 CUDAK tgl ${d} dicatat!`);render();
+}
+function addSwapPerm(){
+  const d=parseInt(document.getElementById('sw3-tgl').value),newPos=parseInt(document.getElementById('sw3-sh').value);
+  if(!d||d<1||d>dim(curY,curM)){showToast('⚠️ Tanggal tidak valid!');return;}
+  permShifts.push({fy:curY,fm:curM,fd:d,newPos});document.getElementById('sw3-tgl').value='';document.getElementById('perm-pv').classList.remove('vis');showToast(`✅ Pola berubah permanen mulai tgl ${d}`);render();
+}
+function removeSwap(type,d){const ms=getMS();if(type==='sehari'&&ms.swaps)delete ms.swaps[+d];else if(type==='cudak'&&ms.cudak)ms.cudak.delete(+d);render();}
+function previewPerm(){
+  const d=parseInt(document.getElementById('sw3-tgl').value),newPos=parseInt(document.getElementById('sw3-sh').value),el=document.getElementById('perm-pv');
+  if(!d||d<1||d>dim(curY,curM)){el.classList.remove('vis');return;}
+  const pv=[];for(let i=0;i<5;i++){let dd=d+i,mm=curM;if(dd>dim(curY,curM)){dd-=dim(curY,curM);mm++;if(mm>11)mm=0;}pv.push(`${dd}/${mm+1}:${EMOJ[CYCLE[((newPos+i)%8+8)%8]]||''}`);}
+  el.textContent='Preview: '+pv.join(' · ')+'...';el.classList.add('vis');
+}
+
+let cutiMode='biasa';
+function setCutiMode(m){
+  cutiMode=m;
+  const fb=document.getElementById('form-biasa');
+  const fp=document.getElementById('form-pola');
+  const tb=document.getElementById('tab-b');
+  const tp=document.getElementById('tab-p');
+  if(fb) fb.style.display=m==='biasa'?'':'none';
+  if(fp) fp.style.display=m==='pola'?'':'none';
+  if(tb) tb.classList.toggle('active',m==='biasa');
+  if(tp) tp.classList.toggle('active',m==='pola');
+}
+let swapMode='sehari';
+function setSwapMode(m){swapMode=m;['sw-sehari','sw-cudak','sw-perm'].forEach((id,i)=>{document.getElementById(id).style.display=['sehari','cudak','perm'][i]===m?'':'none';});['stab1','stab2','stab3'].forEach((id,i)=>{document.getElementById(id).classList.toggle('active',['sehari','cudak','perm'][i]===m);});}
+
+function toggleBareng(){
+  allowBareng=!allowBareng;
+  const _tb2=document.getElementById('tog-bareng'); if(_tb2) _tb2.classList.toggle('on', allowBareng);
+  render();
+}
+function toggleAjukan(){toggleCard('ajukan-b','ajukan-c');const _ab=document.getElementById('ajukan-b');document.body.classList.toggle('selecting',_ab?_ab.classList.contains('open'):false);}
+function toggleCard(bId,cId){const b=document.getElementById(bId),c=document.getElementById(cId);if(!b||!c)return;b.classList.toggle('open');c.classList.toggle('open');const hd=b.previousElementSibling;if(hd)hd.classList.toggle('open',b.classList.contains('open'));}
+
+/* ══ THEME SYSTEM ══ */
+let currentColor='sky', isDark=false, swatchOpen=false;
+
+function toggleSwatches(){
+  swatchOpen=!swatchOpen;
+  const _sr=document.getElementById('swatch-row'); if(_sr) _sr.classList.toggle('open', swatchOpen);
+}
+
+// Close swatches when clicking outside
+document.addEventListener('click', function(e){
+  if(swatchOpen && !e.target.closest('.swatch-wrap') && !e.target.closest('.swatch-trigger')){
+    swatchOpen=false;
+    const _sr2=document.getElementById('swatch-row'); if(_sr2) _sr2.classList.remove('open');
+  }
+});
+
+const BLOB_MAP={
+  sky:  ['#b8ddf0,#8ec8e8','#e8d8f0,#d4c0e8','#fde8d8,#f5d0b8'],
+  sage: ['#c8e6ca,#a5d6a7','#e8d8f0,#d4c0e8','#fde8d8,#f5d0b8'],
+  rose: ['#f8d4da,#f0b8c4','#ead4e8,#d8b8d4','#fde8d8,#f5d0b8'],
+  lavender:['#dcd4f4,#c8c0ec','#e8d4f0,#d8b8e4','#fde8d8,#f5d0b8'],
+  terra:['#f0d0b8,#e8b898','#e8d0c0,#d8b8a8','#fce8c8,#f4d0a8'],
+};
+
+function applyBlobs(color){
+  const cols=BLOB_MAP[color]||BLOB_MAP.sky;
+  ['blob1','blob2','blob3'].forEach((id,i)=>{
+    const el=document.getElementById(id);
+    if(el){const[c1,c2]=cols[i].split(',');el.style.background=`radial-gradient(circle,${c1},${c2} 60%,transparent)`;}
+  });
+}
+
+function setColor(c){
+  currentColor=c;
+  document.documentElement.setAttribute('data-color',c);
+  document.querySelectorAll('.swatch').forEach(s=>s.classList.toggle('active',s.dataset.c===c));
+  applyBlobs(c);
+}
+
+function toggleDark(){
+  isDark=!isDark;
+  document.documentElement.setAttribute('data-mode',isDark?'dark':'light');
+  const btn=document.getElementById('dark-btn');
+  btn.textContent=isDark?'☀️':'🌙';
+  btn.classList.add('spinning');
+  setTimeout(()=>btn.classList.remove('spinning'),420);
+}
+
+let toastTimer;
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2800);}
+
+applyBlobs('sky');
+
+
+  // ── PWA Manifest (dinamis) ──
+  const _manifest = {
+    name: 'Kalender Dinas 2026',
+    short_name: 'Kalender',
+    start_url: '.',
+    display: 'standalone',
+    background_color: '#f4f6f9',
+    theme_color: '#5b9fc0',
+    icons: [{
+      src: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%235b9fc0'/><text y='75' x='12' font-size='65'>📅</text></svg>",
+      sizes: '192x192',
+      type: 'image/svg+xml'
+    }]
+  };
+  const _mBlob = new Blob([JSON.stringify(_manifest)], {type:'application/manifest+json'});
+  const _mLink = document.createElement('link');
+  _mLink.rel = 'manifest';
+  _mLink.href = URL.createObjectURL(_mBlob);
+  document.head.appendChild(_mLink);
+
+
+
+
+
+
+
+  // ── Lembur ──
+  function setLembur(d, jam){
+    const ms = getMS();
+    if(jam===0){ delete ms.lembur[d]; showToast(`🗑 Lembur tgl ${d} dihapus`); }
+    else { ms.lembur[d]=jam; showToast(`⚡ Lembur ${jam} jam tgl ${d} disimpan`); }
+    render();
+    // Update popup jika masih terbuka
+    const pop = document.getElementById('day-popup');
+    if(pop && pop.style.display!=='none'){
+      showDayPopup(d, null);
+    }
+  }
+
+  function getLemburPeriod(){
+    // Periode 21 bln lalu s/d 20 bln ini
+    // Misal April: 21 Mar - 20 Apr
+    let totalJam = 0;
+    const items = [];
+
+    // Bagian akhir bulan lalu (tgl 21-akhir)
+    let prevM = curM-1, prevY = curY;
+    if(prevM<0){ prevM=11; prevY--; }
+    const kPrev = prevY+'-'+prevM;
+    const lemPrev = (monthState[kPrev]&&monthState[kPrev].lembur)||{};
+    const dimPrev = new Date(prevY, prevM+1, 0).getDate();
+    for(let d=21; d<=dimPrev; d++){
+      if(lemPrev[d]){ totalJam+=lemPrev[d]; items.push({d,m:prevM,y:prevY,jam:lemPrev[d]}); }
+    }
+    // Bagian awal bulan ini (tgl 1-20)
+    const lemCur = getMS().lembur;
+    for(let d=1; d<=20; d++){
+      if(lemCur[d]){ totalJam+=lemCur[d]; items.push({d,m:curM,y:curY,jam:lemCur[d]}); }
+    }
+    return {totalJam, items};
+  }
+
+
+  function renderJatahCuti(){
+    const el = document.getElementById('jatah-cuti-content');
+    if(!el) return;
+
+    const terpakai = getTotalCutiTerpakai(curY, curM);
+    const sisa = Math.max(0, cutiJatah - terpakai);
+    const pct = Math.min(100, Math.round((terpakai/cutiJatah)*100));
+    const barColor = sisa<=3 ? '#e05555' : sisa<=6 ? '#f0a020' : 'var(--acc)';
+
+    // Rincian per bulan yang sudah ada cuti
+    let rincian = '';
+    for(let m=0; m<12; m++){
+      const k = cutiStartYear+'-'+m;
+      if(monthState[k] && monthState[k].saved && monthState[k].saved.size>0){
+        rincian += `<div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--bord)">
+          <span style="font-size:12px;color:var(--txt2)">${MNAMES[m]}</span>
+          <span style="font-size:12px;font-weight:700;color:var(--acc)">${monthState[k].saved.size} hari</span>
+        </div>`;
+      }
+    }
+
+    el.innerHTML = `
+      <div style="text-align:center;margin-bottom:14px">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--txt3);margin-bottom:6px">Sisa Cuti ${cutiStartYear}</div>
+        <div style="font-size:48px;font-weight:700;color:${barColor};font-family:'DM Serif Display',serif;line-height:1">${sisa}</div>
+        <div style="font-size:12px;color:var(--txt3);margin-top:4px">dari ${cutiJatah} hari jatah</div>
+      </div>
+
+      <div style="background:var(--bord);border-radius:99px;height:10px;overflow:hidden;margin-bottom:6px">
+        <div style="height:100%;width:${pct}%;background:${barColor};border-radius:99px;transition:width .5s cubic-bezier(.16,1,.3,1)"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-bottom:16px">
+        <span style="font-size:11px;color:var(--txt3)">${terpakai} hari terpakai (${pct}%)</span>
+        <button onclick="editJatahCuti()" style="font-size:11px;color:var(--acc);background:none;border:none;cursor:pointer;padding:0;font-family:'DM Sans',system-ui,sans-serif">✏️ Ubah</button>
+      </div>
+
+      ${rincian ? `<div style="font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--txt3);margin-bottom:6px">Rincian per Bulan</div>${rincian}` : '<div style="font-size:12px;color:var(--txt3);text-align:center">Belum ada cuti tercatat</div>'}
+    `;
+  }
+
+  function renderLembur(){
+    const el = document.getElementById('lembur-list');
+    if(!el) return;
+    const {totalJam, items} = getLemburPeriod();
+    let prevM=curM-1, prevY=curY;
+    if(prevM<0){prevM=11;prevY--;}
+    const periodLabel = `${21} ${MNAMES[prevM]} – 20 ${MNAMES[curM]} ${curY}`;
+
+    let html = `<div class="lembur-period">Periode: ${periodLabel}</div>`;
+    html += `<div class="lembur-total-box">
+      <div class="lt-label">Total Jam Lembur</div>
+      <div class="lt-val">${totalJam} <span style="font-size:16px;opacity:.8">jam</span></div>
+      <div class="lt-sub">${items.length} hari lembur</div>
+    </div>`;
+
+    if(!items.length){
+      html += '<div style="font-size:12px;color:var(--txt3);text-align:center;padding:8px 0">Belum ada lembur periode ini</div>';
+    } else {
+      html += items.map(it=>`<div class="lembur-item">
+        <div class="lembur-dot"></div>
+        <div style="flex:1;font-size:12px"><b>${it.d} ${MNAMES[it.m]}</b> <span style="color:var(--txt3)">${getShift(it.y,it.m,it.d)}</span></div>
+        <div style="font-size:13px;font-weight:700;color:var(--acc)">⚡ ${it.jam} jam</div>
+        <button class="btn sm danger" onclick="setLemburDirect(${it.d},${it.m},${it.y},0)" style="margin-left:6px">✕</button>
+      </div>`).join('');
+    }
+    el.innerHTML = html;
+  }
+
+
+
+  function checkLemburCustom(){
+    const sel = document.getElementById('lem-jam');
+    const inp = document.getElementById('lem-jam-custom');
+    if(!sel||!inp) return;
+    inp.style.display = sel.value==='custom' ? 'block' : 'none';
+  }
+  function promptLemburCustom(d){
+    const val = prompt('Masukkan jam lembur (1-24):', '');
+    if(val===null) return;
+    const n = parseInt(val);
+    if(isNaN(n)||n<1||n>24){ showToast('⚠️ Jam tidak valid (1-24)'); return; }
+    setLembur(d, n);
+  }
+
+  function addLemburManual(){
+    const _lt2 = document.getElementById('lem-tgl');
+    const _lj2 = document.getElementById('lem-jam');
+    const _ljc = document.getElementById('lem-jam-custom');
+    const tgl = parseInt(_lt2 ? _lt2.value : 0);
+    const rawJam = _lj2 ? _lj2.value : '6';
+    const jam = rawJam==='custom' ? parseInt(_ljc?_ljc.value:0) : parseInt(rawJam);
+    const maxD = new Date(curY,curM+1,0).getDate();
+    if(isNaN(tgl)||tgl<1||tgl>maxD){ showToast('⚠️ Tanggal tidak valid'); return; }
+    setLemburDirect(tgl, curM, curY, jam);
+    const _lt=document.getElementById('lem-tgl'); if(_lt) _lt.value='';
+    const _ljc2=document.getElementById('lem-jam-custom'); if(_ljc2){_ljc2.value='';_ljc2.style.display='none';} const _ljs=document.getElementById('lem-jam'); if(_ljs) _ljs.value='6';
+    showToast(`⚡ Lembur ${jam} jam tgl ${tgl} ${MNAMES[curM]} disimpan`);
+  }
+
+  function setLemburDirect(d,m,y,jam){
+    const k=y+'-'+m;
+    if(!monthState[k]) monthState[k]={karyawan:[],saved:new Set(),swaps:{},cudak:new Set(),lembur:{}};
+    if(!monthState[k].lembur) monthState[k].lembur={};
+    if(jam===0){ delete monthState[k].lembur[d]; showToast(`🗑 Lembur tgl ${d} dihapus`); }
+    else monthState[k].lembur[d]=jam;
+    render();
+  }
+
+  // ── Month Picker ──
+  let _mpickerY = 2026;
+  const MNAMES_SHORT = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agt','Sep','Okt','Nov','Des'];
+
+  function openMPicker(){
+    _mpickerY = curY;
+    renderMPicker();
+    const _mp=document.getElementById('mpicker-overlay'); if(_mp) _mp.classList.add('open');
+  }
+  function closeMPicker(){
+    const _mp2=document.getElementById('mpicker-overlay'); if(_mp2) _mp2.classList.remove('open');
+  }
+  function closeMPickerIfBg(e){
+    if(e.target===document.getElementById('mpicker-overlay')) closeMPicker();
+  }
+  function mpickerYearChange(d){
+    _mpickerY += d;
+    if(_mpickerY < 2026) _mpickerY = 2026;
+    renderMPicker();
+  }
+  function renderMPicker(){
+    const _mpl=document.getElementById('mpicker-year-label'); if(_mpl) _mpl.textContent=_mpickerY;
+    const now = new Date();
+    const grid = document.getElementById('mpicker-months');
+    grid.innerHTML = MNAMES_SHORT.map((name,m)=>{
+      const isActive  = (_mpickerY===curY && m===curM);
+      const isDisabled= (_mpickerY===2026 && m<0); // tidak ada batas bawah selain 2026
+      const isToday   = (_mpickerY===now.getFullYear() && m===now.getMonth());
+      let cls = 'mpicker-m';
+      if(isActive)   cls += ' active';
+      if(isDisabled) cls += ' disabled';
+      return `<button class="${cls}" onclick="selectMPickerMonth(${m})">${name}${isToday?' 📍':''}</button>`;
+    }).join('');
+  }
+  function selectMPickerMonth(m){
+    const targetY = _mpickerY, targetM = m;
+    const dir = (targetY > curY || (targetY===curY && targetM > curM)) ? 1 : -1;
+    closeMPicker();
+    // Langsung set tanpa animasi slide kalau jauh
+    const diff = Math.abs((targetY-curY)*12 + (targetM-curM));
+    if(diff > 2){
+      curY=targetY; curM=targetM; render();
+    } else {
+      // Pakai animasi normal
+      let steps = 0;
+      function step(){
+        if(curY===targetY && curM===targetM) return;
+        changeMonth(dir);
+        steps++;
+        if(steps<12) setTimeout(step, 200);
+      }
+      step();
+    }
+  }
+  function goToToday(){
+    const now = new Date();
+    _mpickerY = now.getFullYear();
+    const targetY = now.getFullYear(), targetM = now.getMonth();
+    closeMPicker();
+    curY=targetY; curM=targetM; render();
+  }
+
+  // ── Backup & Restore Data ──
+  function openDataModal(){
+    const raw = localStorage.getItem('kalender-dinas') || '';
+    document.getElementById('data-textarea').value = raw;
+    const _dm=document.getElementById('data-modal-overlay'); if(_dm) _dm.classList.add('open');
+  }
+  function closeDataModal(){
+    const _dm2=document.getElementById('data-modal-overlay'); if(_dm2) _dm2.classList.remove('open');
+  }
+  function closeDataModalIfBg(e){
+    if(e.target===document.getElementById('data-modal-overlay')) closeDataModal();
+  }
+  function exportData(){
+    const raw = localStorage.getItem('kalender-dinas') || '';
+    if(!raw){ showToast('⚠️ Tidak ada data tersimpan'); return; }
+    document.getElementById('data-textarea').value = raw;
+    navigator.clipboard.writeText(raw).then(()=>{
+      showToast('✅ Data ter-copy! Paste ke tempat aman.');
+    }).catch(()=>{
+      // Fallback select all
+      const ta = document.getElementById('data-textarea');
+      ta.select();
+      document.execCommand('copy');
+      showToast('✅ Data ter-copy!');
+    });
+  }
+  function importData(){
+    const val = document.getElementById('data-textarea').value.trim();
+    if(!val){ showToast('⚠️ Paste data dulu di kotak teks'); return; }
+    try{
+      JSON.parse(val); // validasi JSON
+      localStorage.setItem('kalender-dinas', val);
+      loadLocal();
+      render();
+      closeDataModal();
+      showToast('✅ Data berhasil di-import!');
+    } catch(e){
+      showToast('❌ Data tidak valid');
+    }
+  }
+  function resetData(){
+    if(!confirm('Hapus semua data? Tidak bisa dibatalkan!')) return;
+    localStorage.removeItem('kalender-dinas');
+    monthState={};
+    permShifts=[];
+    render();
+    closeDataModal();
+    showToast('🗑 Data direset');
+  }
+
+  // ── Export / Share ──
+  let _exportCanvas = null;
+
+  function openExport(){
+    const overlay = document.getElementById('export-modal-overlay');
+    const lbl = document.getElementById('exp-month-label');
+    if(lbl) lbl.textContent = `Kalender ${MNAMES[curM]} ${curY}`;
+    overlay.classList.add('open');
+    const cb = document.getElementById('ctrl-bar'); if(cb) cb.style.display='none';
+    _exportCanvas = null;
+    document.getElementById('exp-preview').innerHTML = '<div class="exp-loading">⏳ Membuat preview...</div>';
+    // Generate after brief delay so modal animates in first
+    setTimeout(generatePreview, 350);
+  }
+
+  function closeExport(){
+    const _em2=document.getElementById('export-modal-overlay'); if(_em2) _em2.classList.remove('open');
+    const cb = document.getElementById('ctrl-bar'); if(cb) cb.style.display='';
+  }
+
+  function closeExportIfBg(e){
+    if(e.target === document.getElementById('export-modal-overlay')) closeExport();
+  }
+
+  async function generatePreview(){
+    const area = document.getElementById('export-area');
+    // Isi banner judul screenshot
+    const etbM = document.getElementById('etb-month-name');
+    const etbY = document.getElementById('etb-year-name');
+    if(etbM) etbM.textContent = MNAMES[curM];
+    if(etbY) etbY.textContent = String(curY);
+    if(!area){ document.getElementById('exp-preview').innerHTML='<div class="exp-loading">❌ Gagal</div>'; return; }
+    try{
+      area.classList.add('exporting');
+      const cb2 = document.getElementById('ctrl-bar'); if(cb2) cb2.style.visibility='hidden';
+      const isDark = document.documentElement.getAttribute('data-mode')==='dark';
+      const bg = isDark ? '#1a1a2e' : '#f4f6f9';
+      const canvas = await html2canvas(area, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: bg,
+        logging: false,
+        ignoreElements: el => el.classList && (el.classList.contains('export-btn') || el.classList.contains('export-modal-overlay'))
+      });
+      area.classList.remove('exporting');
+      const cb3 = document.getElementById('ctrl-bar'); if(cb3) cb3.style.visibility='';
+      _exportCanvas = canvas;
+      const img = document.createElement('img');
+      img.src = canvas.toDataURL('image/png');
+      img.style.borderRadius = '10px';
+      const prev = document.getElementById('exp-preview');
+      prev.innerHTML = '';
+      prev.appendChild(img);
+    } catch(e){
+      if(area) area.classList.remove('exporting');
+      document.getElementById('exp-preview').innerHTML='<div class="exp-loading">❌ Error: '+e.message+'</div>';
+    }
+  }
+
+  function downloadImg(){
+    if(!_exportCanvas){ showToast('⏳ Masih loading...'); return; }
+    const a = document.createElement('a');
+    a.download = `Kalender-${MNAMES[curM]}-${curY}.png`;
+    a.href = _exportCanvas.toDataURL('image/png');
+    a.click();
+    showToast('✅ Gambar tersimpan!');
+  }
+
+  async function shareImg(){
+    if(!_exportCanvas){ showToast('⏳ Masih loading...'); return; }
+    try{
+      const blob = await new Promise(res => _exportCanvas.toBlob(res, 'image/png'));
+      const file = new File([blob], `Kalender-${MNAMES[curM]}-${curY}.png`, {type:'image/png'});
+      if(navigator.canShare && navigator.canShare({files:[file]})){
+        await navigator.share({ files:[file], title:`Kalender Dinas ${MNAMES[curM]} ${curY}` });
+      } else {
+        // Fallback: download
+        downloadImg();
+        showToast('📱 Share tidak didukung, file didownload');
+      }
+    } catch(e){
+      if(e.name !== 'AbortError') showToast('❌ Gagal share');
+    }
+  }
+
+  // ── Local Storage ──
+  // Load jatah cuti
+  try{ const j=localStorage.getItem('cuti-jatah'); if(j) cutiJatah=parseInt(j)||12; }catch(e){}
+
+function saveLocal(){
+    try{
+      const data={
+        monthState: JSON.stringify(monthState, (_,v)=>v instanceof Set?[...v]:v),
+        permShifts: JSON.stringify(permShifts),
+        curY, curM, currentColor,
+        allowBareng
+      };
+      localStorage.setItem('kalender-dinas', JSON.stringify(data));
+    }catch(e){}
+  }
+  function loadLocal(){
+    try{
+      const raw=localStorage.getItem('kalender-dinas');
+      if(!raw) return;
+      const data=JSON.parse(raw);
+      if(data.monthState){
+        const ms=JSON.parse(data.monthState);
+        Object.keys(ms).forEach(k=>{
+          ms[k].saved=new Set(ms[k].saved||[]);
+          ms[k].cudak=new Set(ms[k].cudak||[]);
+          ms[k].lembur=ms[k].lembur||{};
+          ms[k].karyawan=(ms[k].karyawan||[]).map(x=>({...x,dates:x.dates||[],maybes:x.maybes||[]}));
+        });
+        monthState=ms;
+      }
+      if(data.permShifts) permShifts=JSON.parse(data.permShifts);
+      if(data.currentColor) setColor(data.currentColor);
+      if(data.allowBareng!==undefined){
+        allowBareng=data.allowBareng;
+        const _tog=document.getElementById('tog-bareng'); if(_tog) _tog.classList.toggle('on',allowBareng);
+      }
+    }catch(e){}
+  }
+  loadLocal();
+  render();
+
+  // ── Swipe kalender ganti bulan ──
+  (function(){
+    let sx=0, sy=0, busy=false;
+    document.addEventListener('touchstart', e=>{
+      sx=e.touches[0].clientX; sy=e.touches[0].clientY;
+    }, {passive:true});
+    document.addEventListener('touchend', e=>{
+      if(busy) return;
+      const dx=e.changedTouches[0].clientX-sx;
+      const dy=e.changedTouches[0].clientY-sy;
+      if(Math.abs(dx)>Math.abs(dy)*1.5 && Math.abs(dx)>60){
+        busy=true;
+        changeMonth(dx<0?1:-1);
+        setTimeout(()=>busy=false, 500);
+      }
+    }, {passive:true});
+  })();
+
+  // ── PWA Service Worker ──
+  if('serviceWorker' in navigator){
+    const swCode = `
+const CACHE='kalender-dinas-v1';
+const FILES=['/'];
+self.addEventListener('install',e=>{
+  e.waitUntil(caches.open(CACHE).then(cache=>cache.addAll([])));
+  self.skipWaiting();
+});
+self.addEventListener('activate',e=>{
+  e.waitUntil(clients.claim());
+});
+self.addEventListener('fetch',e=>{
+  e.respondWith(
+    caches.match(e.request).then(r=>r||fetch(e.request).catch(()=>new Response('Offline')))
+  );
+});
+`;
+    const blob = new Blob([swCode], {type:'application/javascript'});
+    const swUrl = URL.createObjectURL(blob);
+    navigator.serviceWorker.register(swUrl).catch(()=>{});
+  }
+
+</script>
+</body>
+</html>
