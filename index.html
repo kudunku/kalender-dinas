@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!-- saved from url=(0086)file:///C:/Users/ASUS/Documents/Data/NTT/project/our-wedding-v2/kalender-v2-fixed.html -->
-<html lang="id" data-color="sky" data-mode="light"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="id" data-color="sky" data-mode="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Kalender Dinas 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
@@ -964,7 +964,7 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
     gap: 14px;
     position: sticky;
     top: 20px;
-    max-height: calc(300vh - 40px);
+    max-height: calc(100vh - 40px);
     overflow-y: auto;
     overflow-x: visible;
     scrollbar-width: thin;
@@ -1003,13 +1003,13 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
 
 </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<link rel="manifest" href="blob:null/237478d9-257b-4187-9442-43b6d5d0895b"></head>
-<body class="">
+</head>
+<body>
 
 <div class="ambient" id="ambient">
-  <div class="amb-blob" id="blob1" style="background: radial-gradient(circle, rgb(184, 221, 240), rgb(142, 200, 232) 60%, transparent);"></div>
-  <div class="amb-blob" id="blob2" style="background: radial-gradient(circle, rgb(232, 216, 240), rgb(212, 192, 232) 60%, transparent);"></div>
-  <div class="amb-blob" id="blob3" style="background: radial-gradient(circle, rgb(253, 232, 216), rgb(245, 208, 184) 60%, transparent);"></div>
+  <div class="amb-blob" id="blob1"></div>
+  <div class="amb-blob" id="blob2"></div>
+  <div class="amb-blob" id="blob3"></div>
 </div>
 
 <!-- CONTROL BAR -->
@@ -1017,11 +1017,11 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
   <button class="dark-btn" onclick="toggleDark()" id="dark-btn">🌙</button>
   <div class="swatch-wrap">
     <div class="swatch-row" id="swatch-row">
-      <div class="swatch active" data-c="sky" data-label="Biru Langit" onclick="setColor(&#39;sky&#39;)"></div>
-      <div class="swatch" data-c="sage" data-label="Sage Green" onclick="setColor(&#39;sage&#39;)"></div>
-      <div class="swatch" data-c="rose" data-label="Dusty Rose" onclick="setColor(&#39;rose&#39;)"></div>
-      <div class="swatch" data-c="lavender" data-label="Lavender" onclick="setColor(&#39;lavender&#39;)"></div>
-      <div class="swatch" data-c="terra" data-label="Terracotta" onclick="setColor(&#39;terra&#39;)"></div>
+      <div class="swatch active" data-c="sky"      data-label="Biru Langit" onclick="setColor('sky')"></div>
+      <div class="swatch"        data-c="sage"     data-label="Sage Green"  onclick="setColor('sage')"></div>
+      <div class="swatch"        data-c="rose"     data-label="Dusty Rose"  onclick="setColor('rose')"></div>
+      <div class="swatch"        data-c="lavender" data-label="Lavender"    onclick="setColor('lavender')"></div>
+      <div class="swatch"        data-c="terra"    data-label="Terracotta"  onclick="setColor('terra')"></div>
     </div>
     <div class="swatch-trigger" id="swatch-trigger" onclick="toggleSwatches()"></div>
   </div>
@@ -1045,14 +1045,14 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
   <!-- Banner judul khusus screenshot (hanya muncul saat export) -->
   <div class="export-title-banner" id="export-title-banner">
     <div class="etb-month" id="etb-month-name">—</div>
-    <div class="etb-year" id="etb-year-name">—</div>
+    <div class="etb-year"  id="etb-year-name">—</div>
   </div>
 
   <div class="month-nav">
     <button class="nav-btn" onclick="changeMonth(-1)">‹</button>
     <div class="month-label-wrap" onclick="openMPicker()">
-      <div class="month-label" id="month-name">April</div>
-      <div class="month-sub" id="month-year">2026</div>
+      <div class="month-label" id="month-name">—</div>
+      <div class="month-sub"   id="month-year">—</div>
     </div>
     <button class="nav-btn" onclick="changeMonth(1)">›</button>
   </div>
@@ -1062,39 +1062,23 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
       <div class="day-lbl min-lbl">Min</div><div class="day-lbl">Sen</div><div class="day-lbl">Sel</div>
       <div class="day-lbl">Rab</div><div class="day-lbl">Kam</div><div class="day-lbl">Jum</div><div class="day-lbl sab-lbl">Sab</div>
     </div>
-    <div class="cal-grid" id="cal-grid"><div></div><div></div><div></div><div class="dc libur-c" onclick="togglePending(1, event)" data-d="1"><div class="dc-num">1</div><div class="dc-nm">Rab</div><div class="dc-em">😴</div><div class="dc-sh">LIBUR</div><div class="dots"></div></div><div class="dc pagi-c avail" onclick="togglePending(2, event)" data-d="2"><div class="dc-num">2</div><div class="dc-nm">Kam</div><div class="dc-em">🌅</div><div class="dc-sh">PAGI</div><div class="dots"></div></div><div class="dc pagi-c avail minggu libnas" onclick="togglePending(3, event)" data-d="3"><div class="dc-num">3</div><div class="dc-nm">Jum</div><div class="dc-em">🌅</div><div class="dc-sh">PAGI</div><div class="dots"></div></div><div class="dc siang-c avail sabtu" onclick="togglePending(4, event)" data-d="4"><div class="dc-num">4</div><div class="dc-nm">Sab</div><div class="dc-em">☀️</div><div class="dc-sh">SIANG</div><div class="dots"></div></div><div class="dc siang-c avail minggu libnas" onclick="togglePending(5, event)" data-d="5"><div class="dc-num">5</div><div class="dc-nm">Min</div><div class="dc-em">☀️</div><div class="dc-sh">SIANG</div><div class="dots"></div></div><div class="dc malam-c" onclick="togglePending(6, event)" data-d="6"><div class="dc-num">6</div><div class="dc-nm">Sen</div><div class="dc-em">🌙</div><div class="dc-sh">MALAM</div><div class="dots"></div></div><div class="dc malam-c" onclick="togglePending(7, event)" data-d="7"><div class="dc-num">7</div><div class="dc-nm">Sel</div><div class="dc-em">🌙</div><div class="dc-sh">MALAM</div><div class="dots"></div></div><div class="dc lepas-c lembur-c" onclick="togglePending(8, event)" data-d="8"><div class="dc-num">8</div><div class="dc-nm">Rab</div><div class="lembur-badge">⚡9j</div><div class="dc-em">🔓</div><div class="dc-sh">LEPAS</div><div class="dots"></div></div><div class="dc libur-c today" onclick="togglePending(9, event)" data-d="9"><div class="dc-num">9</div><div class="dc-nm">Kam</div><div class="dc-em">😴</div><div class="dc-sh">LIBUR</div><div class="dots"></div></div><div class="dc pagi-c avail" onclick="togglePending(10, event)" data-d="10"><div class="dc-num">10</div><div class="dc-nm">Jum</div><div class="dc-em">🌅</div><div class="dc-sh">PAGI</div><div class="dots"></div></div><div class="dc pagi-c avail sabtu" onclick="togglePending(11, event)" data-d="11"><div class="dc-num">11</div><div class="dc-nm">Sab</div><div class="dc-em">🌅</div><div class="dc-sh">PAGI</div><div class="dots"></div></div><div class="dc siang-c avail minggu" onclick="togglePending(12, event)" data-d="12"><div class="dc-num">12</div><div class="dc-nm">Min</div><div class="dc-em">☀️</div><div class="dc-sh">SIANG</div><div class="dots"></div></div><div class="dc siang-c avail" onclick="togglePending(13, event)" data-d="13"><div class="dc-num">13</div><div class="dc-nm">Sen</div><div class="dc-em">☀️</div><div class="dc-sh">SIANG</div><div class="dots"></div></div><div class="dc malam-c" onclick="togglePending(14, event)" data-d="14"><div class="dc-num">14</div><div class="dc-nm">Sel</div><div class="dc-em">🌙</div><div class="dc-sh">MALAM</div><div class="dots"></div></div><div class="dc malam-c" onclick="togglePending(15, event)" data-d="15"><div class="dc-num">15</div><div class="dc-nm">Rab</div><div class="dc-em">🌙</div><div class="dc-sh">MALAM</div><div class="dots"></div></div><div class="dc lepas-c" onclick="togglePending(16, event)" data-d="16"><div class="dc-num">16</div><div class="dc-nm">Kam</div><div class="dc-em">🔓</div><div class="dc-sh">LEPAS</div><div class="dots"></div></div><div class="dc libur-c" onclick="togglePending(17, event)" data-d="17"><div class="dc-num">17</div><div class="dc-nm">Jum</div><div class="dc-em">😴</div><div class="dc-sh">LIBUR</div><div class="dots"></div></div><div class="dc pagi-c avail sabtu" onclick="togglePending(18, event)" data-d="18"><div class="dc-num">18</div><div class="dc-nm">Sab</div><div class="dc-em">🌅</div><div class="dc-sh">PAGI</div><div class="dots"></div></div><div class="dc pagi-c avail minggu" onclick="togglePending(19, event)" data-d="19"><div class="dc-num">19</div><div class="dc-nm">Min</div><div class="dc-em">🌅</div><div class="dc-sh">PAGI</div><div class="dots"></div></div><div class="dc siang-c avail" onclick="togglePending(20, event)" data-d="20"><div class="dc-num">20</div><div class="dc-nm">Sen</div><div class="dc-em">☀️</div><div class="dc-sh">SIANG</div><div class="dots"></div></div><div class="dc siang-c avail" onclick="togglePending(21, event)" data-d="21"><div class="dc-num">21</div><div class="dc-nm">Sel</div><div class="dc-em">☀️</div><div class="dc-sh">SIANG</div><div class="dots"></div></div><div class="dc malam-c" onclick="togglePending(22, event)" data-d="22"><div class="dc-num">22</div><div class="dc-nm">Rab</div><div class="dc-em">🌙</div><div class="dc-sh">MALAM</div><div class="dots"></div></div><div class="dc malam-c" onclick="togglePending(23, event)" data-d="23"><div class="dc-num">23</div><div class="dc-nm">Kam</div><div class="dc-em">🌙</div><div class="dc-sh">MALAM</div><div class="dots"></div></div><div class="dc lepas-c" onclick="togglePending(24, event)" data-d="24"><div class="dc-num">24</div><div class="dc-nm">Jum</div><div class="dc-em">🔓</div><div class="dc-sh">LEPAS</div><div class="dots"></div></div><div class="dc libur-c sabtu" onclick="togglePending(25, event)" data-d="25"><div class="dc-num">25</div><div class="dc-nm">Sab</div><div class="dc-em">😴</div><div class="dc-sh">LIBUR</div><div class="dots"></div></div><div class="dc pagi-c avail minggu" onclick="togglePending(26, event)" data-d="26"><div class="dc-num">26</div><div class="dc-nm">Min</div><div class="dc-em">🌅</div><div class="dc-sh">PAGI</div><div class="dots"></div></div><div class="dc pagi-c avail" onclick="togglePending(27, event)" data-d="27"><div class="dc-num">27</div><div class="dc-nm">Sen</div><div class="dc-em">🌅</div><div class="dc-sh">PAGI</div><div class="dots"></div></div><div class="dc siang-c avail" onclick="togglePending(28, event)" data-d="28"><div class="dc-num">28</div><div class="dc-nm">Sel</div><div class="dc-em">☀️</div><div class="dc-sh">SIANG</div><div class="dots"></div></div><div class="dc siang-c avail lembur-c" onclick="togglePending(29, event)" data-d="29"><div class="dc-num">29</div><div class="dc-nm">Rab</div><div class="lembur-badge">⚡9j</div><div class="dc-em">☀️</div><div class="dc-sh">SIANG</div><div class="dots"></div></div><div class="dc malam-c lembur-c" onclick="togglePending(30, event)" data-d="30"><div class="dc-num">30</div><div class="dc-nm">Kam</div><div class="lembur-badge">⚡6j</div><div class="dc-em">🌙</div><div class="dc-sh">MALAM</div><div class="dots"></div></div></div>
+    <div class="cal-grid" id="cal-grid"></div>
   </div>
 
-  <div class="legend" id="legend"><div class="leg-i"><div class="leg-d" style="background:var(--pagi)"></div>Pagi</div><div class="leg-i"><div class="leg-d" style="background:var(--siang)"></div>Siang</div><div class="leg-i"><div class="leg-d" style="background:var(--malam)"></div>Malam</div><div class="leg-i"><div class="leg-d" style="background:var(--lepas)"></div>Lepas</div><div class="leg-i"><div class="leg-d" style="background:var(--libur)"></div>Libur</div><div class="leg-i"><div class="leg-d" style="background:var(--cudak)"></div>CUDAK</div></div>
+  <div class="legend" id="legend"></div>
   </div><!-- /export-area -->
 
   <div class="side-panel">
 
   <!-- Jatah Cuti Card -->
   <div class="card" id="jatah-cuti-card">
-    <div class="card-hd" onclick="toggleCard(&#39;jatah-cuti-b&#39;,&#39;jatah-cuti-c&#39;)">
+    <div class="card-hd" onclick="toggleCard('jatah-cuti-b','jatah-cuti-c')">
       <div class="card-hd-l"><div class="card-icon" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9)">🏖️</div><div class="card-title">Jatah Cuti</div></div>
       <span class="chev" id="jatah-cuti-c">▼</span>
     </div>
     <div class="collapse" id="jatah-cuti-b">
       <div class="card-body">
-        <div id="jatah-cuti-content">
-      <div style="text-align:center;margin-bottom:14px">
-        <div style="font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--txt3);margin-bottom:6px">Sisa Cuti 2026</div>
-        <div style="font-size:48px;font-weight:700;color:var(--acc);font-family:&#39;DM Serif Display&#39;,serif;line-height:1">355</div>
-        <div style="font-size:12px;color:var(--txt3);margin-top:4px">dari 355 hari jatah</div>
-      </div>
-
-      <div style="background:var(--bord);border-radius:99px;height:10px;overflow:hidden;margin-bottom:6px">
-        <div style="height:100%;width:0%;background:var(--acc);border-radius:99px;transition:width .5s cubic-bezier(.16,1,.3,1)"></div>
-      </div>
-      <div style="display:flex;justify-content:space-between;margin-bottom:16px">
-        <span style="font-size:11px;color:var(--txt3)">0 hari terpakai (0%)</span>
-        <button onclick="editJatahCuti()" style="font-size:11px;color:var(--acc);background:none;border:none;cursor:pointer;padding:0;font-family:&#39;DM Sans&#39;,system-ui,sans-serif">✏️ Ubah</button>
-      </div>
-
-      <div style="font-size:12px;color:var(--txt3);text-align:center">Belum ada cuti tercatat</div>
-    </div>
+        <div id="jatah-cuti-content"></div>
       </div>
     </div>
   </div>
@@ -1116,35 +1100,35 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
           </div>
         </div>
         <div style="display:flex;gap:12px;margin-bottom:4px">
-          <div style="flex:1"><div class="sum-lbl" style="color:var(--pagi)" id="pagi-lbl">🌅 Pagi bisa cuti</div><div class="chips" id="pagi-chips"><span class="chip pagi">⭐ 2</span><span class="chip pagi">⭐ 3</span><span class="chip pagi">10</span><span class="chip pagi">11</span><span class="chip pagi">18</span><span class="chip pagi">19</span><span class="chip pagi">26</span><span class="chip pagi">27</span></div></div>
-          <div style="flex:1"><div class="sum-lbl" style="color:var(--siang)" id="siang-lbl">☀️ Siang bisa cuti</div><div class="chips" id="siang-chips"><span class="chip siang">4</span><span class="chip siang">5</span><span class="chip siang">12</span><span class="chip siang">13</span><span class="chip siang">20</span><span class="chip siang">21</span><span class="chip siang">28</span><span class="chip siang">29</span></div></div>
+          <div style="flex:1"><div class="sum-lbl" style="color:var(--pagi)" id="pagi-lbl">🌅 Pagi bisa cuti</div><div class="chips" id="pagi-chips"></div></div>
+          <div style="flex:1"><div class="sum-lbl" style="color:var(--siang)" id="siang-lbl">☀️ Siang bisa cuti</div><div class="chips" id="siang-chips"></div></div>
         </div>
       </div>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-hd" onclick="toggleCard(&#39;karya-b&#39;,&#39;karya-c&#39;)">
+    <div class="card-hd" onclick="toggleCard('karya-b','karya-c')">
       <div class="card-hd-l"><div class="card-icon" style="background:var(--malam-l)">👥</div><div class="card-title">Cuti Karyawan Lain</div></div>
       <span class="chev" id="karya-c">▼</span>
     </div>
     <div class="collapse" id="karya-b">
       <div class="card-body">
         <div class="radio-tabs">
-          <div class="rtab active" id="tab-b" onclick="setCutiMode(&#39;biasa&#39;)">Biasa</div>
-          <div class="rtab" id="tab-p" onclick="setCutiMode(&#39;pola&#39;)">Bebas</div>
+          <div class="rtab active" id="tab-b" onclick="setCutiMode('biasa')">Biasa</div>
+          <div class="rtab" id="tab-p" onclick="setCutiMode('pola')">Bebas</div>
         </div>
         <div id="form-biasa">
           <div class="two-col">
-            <div class="fgrp"><div class="flabel">Nama</div><input class="inp" id="b-nama" placeholder="Nama karyawan"></div>
-            <div class="fgrp"><div class="flabel">Tanggal (pisah koma)</div><input class="inp" id="b-tgl" placeholder="3, 4, 5"></div>
+            <div class="fgrp"><div class="flabel">Nama</div><input class="inp" id="b-nama" placeholder="Nama karyawan"/></div>
+            <div class="fgrp"><div class="flabel">Tanggal (pisah koma)</div><input class="inp" id="b-tgl" placeholder="3, 4, 5"/></div>
           </div>
           <button class="btn w100" onclick="addBiasa()">+ Tambah Cuti</button>
         </div>
         <div id="form-pola" style="display:none">
           <p style="font-size:11px;color:var(--txt3);margin-bottom:12px;line-height:1.6">Tanggal cuti akan tampil <b>pudar</b> sebagai kemungkinan. Klik tanggal di kalender untuk konfirmasi.</p>
           <div class="two-col">
-            <div class="fgrp"><div class="flabel">Nama</div><input class="inp" id="p-nama" placeholder="Nama"></div>
+            <div class="fgrp"><div class="flabel">Nama</div><input class="inp" id="p-nama" placeholder="Nama"/></div>
             <div class="fgrp"><div class="flabel">Posisi tgl 1</div>
               <select class="inp" id="p-pos" onchange="previewPola()">
                 <option value="0">Pagi ke-1</option><option value="1">Pagi ke-2</option>
@@ -1164,27 +1148,27 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
           <div class="pola-pv" id="pola-pv"></div>
           <button class="btn w100" onclick="addPola()" style="margin-top:10px">+ Tambah Kemungkinan</button>
         </div>
-        <div class="k-list" id="k-list"><div class="empty-txt">Belum ada karyawan cuti bulan ini.</div></div>
+        <div class="k-list" id="k-list"></div>
       </div>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-hd open" onclick="toggleCard(&#39;swap-b&#39;,&#39;swap-c&#39;)">
+    <div class="card-hd" onclick="toggleCard('swap-b','swap-c')">
       <div class="card-hd-l"><div class="card-icon" style="background:var(--lepas-l)">🔄</div><div class="card-title">Tukar / Ganti Jadwal</div></div>
-      <span class="chev open" id="swap-c">▼</span>
+      <span class="chev" id="swap-c">▼</span>
     </div>
-    <div class="collapse open" id="swap-b">
+    <div class="collapse" id="swap-b">
       <div class="card-body">
         <div class="radio-tabs">
-          <div class="rtab active" id="stab1" onclick="setSwapMode(&#39;sehari&#39;)">Sehari</div>
-          <div class="rtab" id="stab2" onclick="setSwapMode(&#39;cudak&#39;)">CUDAK</div>
-          <div class="rtab" id="stab3" onclick="setSwapMode(&#39;perm&#39;)">Ubah Pola</div>
+          <div class="rtab active" id="stab1" onclick="setSwapMode('sehari')">Sehari</div>
+          <div class="rtab" id="stab2" onclick="setSwapMode('cudak')">CUDAK</div>
+          <div class="rtab" id="stab3" onclick="setSwapMode('perm')">Ubah Pola</div>
         </div>
         <div id="sw-sehari">
           <p style="font-size:11px;color:var(--txt3);margin-bottom:12px">Tukar shift 1 hari saja.</p>
           <div class="two-col">
-            <div class="fgrp"><div class="flabel">Tanggal</div><input class="inp" type="number" id="sw1-tgl" min="1" max="31" placeholder="Tgl"></div>
+            <div class="fgrp"><div class="flabel">Tanggal</div><input class="inp" type="number" id="sw1-tgl" min="1" max="31" placeholder="Tgl"/></div>
             <div class="fgrp"><div class="flabel">Ganti jadi</div>
               <select class="inp" id="sw1-sh">
                 <option value="Pagi">🌅 Pagi</option><option value="Siang">☀️ Siang</option>
@@ -1198,13 +1182,13 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
           <div class="cudak-box"><span style="font-size:20px">🌸</span>
             <div><div style="font-size:11px;font-weight:700;color:var(--cudak)">CUDAK — Cuti Dadakan</div><div style="font-size:10px;color:var(--txt3)">Tandai sebagai cuti mendadak</div></div>
           </div>
-          <div class="fgrp"><div class="flabel">Tanggal CUDAK</div><input class="inp" type="number" id="cudak-tgl" min="1" max="31" placeholder="Tgl"></div>
+          <div class="fgrp"><div class="flabel">Tanggal CUDAK</div><input class="inp" type="number" id="cudak-tgl" min="1" max="31" placeholder="Tgl"/></div>
           <button class="btn prp w100" onclick="addCudak()">🌸 Tandai CUDAK</button>
         </div>
         <div id="sw-perm" style="display:none">
           <p style="font-size:11px;color:var(--txt3);margin-bottom:12px">Mulai tanggal ini, siklus bergeser permanen.</p>
           <div class="two-col">
-            <div class="fgrp"><div class="flabel">Mulai tanggal</div><input class="inp" type="number" id="sw3-tgl" min="1" max="31" placeholder="Tgl" oninput="previewPerm()"></div>
+            <div class="fgrp"><div class="flabel">Mulai tanggal</div><input class="inp" type="number" id="sw3-tgl" min="1" max="31" placeholder="Tgl" oninput="previewPerm()"/></div>
             <div class="fgrp"><div class="flabel">Jadi shift</div>
               <select class="inp" id="sw3-sh" onchange="previewPerm()">
                 <option value="0">Pagi ke-1</option><option value="1">Pagi ke-2</option>
@@ -1217,66 +1201,7 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
           <div class="pola-pv" id="perm-pv"></div>
           <button class="btn sec w100" onclick="addSwapPerm()" style="margin-top:10px">Terapkan Permanen</button>
         </div>
-        <div class="sw-list" id="sw-list"><div class="empty-txt">Belum ada perubahan jadwal.</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Lembur Card -->
-  <div class="card" id="lembur-card">
-    <div class="card-hd" onclick="toggleCard(&#39;lembur-b&#39;,&#39;lembur-c&#39;)">
-      <div class="card-hd-l"><div class="card-icon" style="background:linear-gradient(135deg,#fff3cd,#ffe08a)">⚡</div><div class="card-title">Lembur</div></div>
-      <span class="chev" id="lembur-c">▼</span>
-    </div>
-    <div class="collapse" id="lembur-b">
-      <div class="card-body">
-        <!-- Input manual lembur -->
-        <div style="display:flex;gap:8px;align-items:flex-end;margin-bottom:14px;flex-wrap:wrap">
-          <div style="flex:1;min-width:60px">
-            <div style="font-size:10px;color:var(--txt3);margin-bottom:4px;font-weight:600">TGL</div>
-            <input id="lem-tgl" type="number" min="1" max="31" placeholder="21" style="width:100%;padding:9px 12px;border-radius:10px;border:1.5px solid var(--bord);background:var(--surf);color:var(--txt);font-size:13px;font-family:&#39;DM Sans&#39;,system-ui,sans-serif;box-sizing:border-box">
-          </div>
-          <div style="flex:2;min-width:100px">
-            <div style="font-size:10px;color:var(--txt3);margin-bottom:4px;font-weight:600">JAM LEMBUR</div>
-            <select id="lem-jam" onchange="checkLemburCustom()" style="width:100%;padding:9px 12px;border-radius:10px;border:1.5px solid var(--bord);background:var(--surf);color:var(--txt);font-size:13px;font-family:&#39;DM Sans&#39;,system-ui,sans-serif;box-sizing:border-box">
-              <option value="3">3 jam</option>
-              <option value="6" selected="">6 jam (Pagi/Siang)</option>
-              <option value="9">9 jam (Malam)</option>
-              <option value="custom">Lainnya...</option>
-            </select>
-            <input id="lem-jam-custom" type="number" min="1" max="24" placeholder="Jam (1-24)" style="display:none;width:100%;margin-top:6px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--acc);background:var(--surf);color:var(--txt);font-size:13px;font-family:&#39;DM Sans&#39;,system-ui,sans-serif;box-sizing:border-box">
-          </div>
-          <button class="btn primary" onclick="addLemburManual()" style="padding:10px 16px;border-radius:10px;flex-shrink:0">+ Tambah</button>
-        </div>
-        <div id="lembur-list"><div class="lembur-period">Periode: 21 Maret – 20 April 2026</div><div class="lembur-total-box">
-      <div class="lt-label">Total Jam Lembur</div>
-      <div class="lt-val">9 <span style="font-size:16px;opacity:.8">jam</span></div>
-      <div class="lt-sub">1 hari lembur</div>
-    </div><div class="lembur-item">
-        <div class="lembur-dot"></div>
-        <div style="flex:1;font-size:12px"><b>8 April</b> <span style="color:var(--txt3)">Lepas</span></div>
-        <div style="font-size:13px;font-weight:700;color:var(--acc)">⚡ 9 jam</div>
-        <button class="btn sm danger" onclick="setLemburDirect(8,3,2026,0)" style="margin-left:6px">✕</button>
-      </div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Backup Card -->
-  <div class="card" id="backup-card">
-    <div class="card-hd" onclick="toggleCard(&#39;backup-b&#39;,&#39;backup-c&#39;)">
-      <div class="card-hd-l"><div class="card-icon" style="background:linear-gradient(135deg,var(--pagi-l),var(--siang-l))">💾</div><div class="card-title">Backup &amp; Restore</div></div>
-      <span class="chev" id="backup-c">▼</span>
-    </div>
-    <div class="collapse" id="backup-b">
-      <div class="card-body">
-        <p style="font-size:12px;color:var(--txt3);margin:0 0 12px">Export data untuk backup, atau import dari backup sebelumnya.</p>
-        <textarea class="data-textarea" id="data-textarea" placeholder="Data akan muncul di sini..."></textarea>
-        <div class="data-actions">
-          <button class="dat-btn dat-btn-copy" onclick="exportData()">📋 Export &amp; Copy</button>
-          <button class="dat-btn dat-btn-import" onclick="importData()">📥 Import</button>
-          <button class="dat-btn dat-btn-reset" onclick="resetData()">🗑 Reset</button>
-        </div>
+        <div class="sw-list" id="sw-list"></div>
       </div>
     </div>
   </div>
@@ -1316,13 +1241,13 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
 <div id="data-modal-overlay" class="data-modal-overlay" onclick="closeDataModalIfBg(event)">
   <div class="data-modal">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
-      <h3>💾 Backup &amp; Restore</h3>
+      <h3>💾 Backup & Restore</h3>
       <button class="exp-close" onclick="closeDataModal()">✕</button>
     </div>
     <p>Export data untuk backup, atau import data dari backup sebelumnya.</p>
     <textarea class="data-textarea" id="data-textarea" placeholder="Data akan muncul di sini..."></textarea>
     <div class="data-actions">
-      <button class="dat-btn dat-btn-copy" onclick="exportData()">📋 Export &amp; Copy</button>
+      <button class="dat-btn dat-btn-copy" onclick="exportData()">📋 Export & Copy</button>
       <button class="dat-btn dat-btn-import" onclick="importData()">📥 Import</button>
       <button class="dat-btn dat-btn-reset" onclick="resetData()">🗑 Reset</button>
     </div>
@@ -1330,6 +1255,56 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
 </div>
   <!-- Extra panel: Lembur & Backup — di desktop masuk kolom kanan, di mobile di bawah -->
   <div id="extra-panel">
+
+  <!-- Lembur Card -->
+  <div class="card" id="lembur-card">
+    <div class="card-hd" onclick="toggleCard('lembur-b','lembur-c')">
+      <div class="card-hd-l"><div class="card-icon" style="background:linear-gradient(135deg,#fff3cd,#ffe08a)">⚡</div><div class="card-title">Lembur</div></div>
+      <span class="chev" id="lembur-c">▼</span>
+    </div>
+    <div class="collapse" id="lembur-b">
+      <div class="card-body">
+        <!-- Input manual lembur -->
+        <div style="display:flex;gap:8px;align-items:flex-end;margin-bottom:14px;flex-wrap:wrap">
+          <div style="flex:1;min-width:60px">
+            <div style="font-size:10px;color:var(--txt3);margin-bottom:4px;font-weight:600">TGL</div>
+            <input id="lem-tgl" type="number" min="1" max="31" placeholder="21" style="width:100%;padding:9px 12px;border-radius:10px;border:1.5px solid var(--bord);background:var(--surf);color:var(--txt);font-size:13px;font-family:'DM Sans',system-ui,sans-serif;box-sizing:border-box">
+          </div>
+          <div style="flex:2;min-width:100px">
+            <div style="font-size:10px;color:var(--txt3);margin-bottom:4px;font-weight:600">JAM LEMBUR</div>
+            <select id="lem-jam" onchange="checkLemburCustom()" style="width:100%;padding:9px 12px;border-radius:10px;border:1.5px solid var(--bord);background:var(--surf);color:var(--txt);font-size:13px;font-family:'DM Sans',system-ui,sans-serif;box-sizing:border-box">
+              <option value="3">3 jam</option>
+              <option value="6" selected>6 jam (Pagi/Siang)</option>
+              <option value="9">9 jam (Malam)</option>
+              <option value="custom">Lainnya...</option>
+            </select>
+            <input id="lem-jam-custom" type="number" min="1" max="24" placeholder="Jam (1-24)" style="display:none;width:100%;margin-top:6px;padding:9px 12px;border-radius:10px;border:1.5px solid var(--acc);background:var(--surf);color:var(--txt);font-size:13px;font-family:'DM Sans',system-ui,sans-serif;box-sizing:border-box">
+          </div>
+          <button class="btn primary" onclick="addLemburManual()" style="padding:10px 16px;border-radius:10px;flex-shrink:0">+ Tambah</button>
+        </div>
+        <div id="lembur-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Backup Card -->
+  <div class="card" id="backup-card">
+    <div class="card-hd" onclick="toggleCard('backup-b','backup-c')">
+      <div class="card-hd-l"><div class="card-icon" style="background:linear-gradient(135deg,var(--pagi-l),var(--siang-l))">💾</div><div class="card-title">Backup & Restore</div></div>
+      <span class="chev" id="backup-c">▼</span>
+    </div>
+    <div class="collapse" id="backup-b">
+      <div class="card-body">
+        <p style="font-size:12px;color:var(--txt3);margin:0 0 12px">Export data untuk backup, atau import dari backup sebelumnya.</p>
+        <textarea class="data-textarea" id="data-textarea" placeholder="Data akan muncul di sini..."></textarea>
+        <div class="data-actions">
+          <button class="dat-btn dat-btn-copy" onclick="exportData()">📋 Export & Copy</button>
+          <button class="dat-btn dat-btn-import" onclick="importData()">📥 Import</button>
+          <button class="dat-btn dat-btn-reset" onclick="resetData()">🗑 Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   </div><!-- /extra-panel -->
 
@@ -1357,14 +1332,17 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
 <div id="jatah-edit-overlay" style="display:none;position:fixed;inset:0;z-index:1200;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);align-items:center;justify-content:center;" onclick="closeJatahEdit(event)">
   <div style="background:var(--surf);border-radius:20px;padding:28px 24px 24px;width:90%;max-width:340px;box-shadow:var(--sh3);animation:slideUp .28s cubic-bezier(.16,1,.3,1) both;" onclick="event.stopPropagation()">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
-      <div style="font-family:&#39;DM Serif Display&#39;,serif;font-size:18px;color:var(--txt)">Ubah Jatah Cuti</div>
-      <button onclick="document.getElementById(&#39;jatah-edit-overlay&#39;).style.display=&#39;none&#39;" style="background:none;border:none;font-size:20px;color:var(--txt3);cursor:pointer">✕</button>
+      <div style="font-family:'DM Serif Display',serif;font-size:18px;color:var(--txt)">Ubah Jatah Cuti</div>
+      <button onclick="document.getElementById('jatah-edit-overlay').style.display='none'" style="background:none;border:none;font-size:20px;color:var(--txt3);cursor:pointer">✕</button>
     </div>
     <div style="font-size:12px;color:var(--txt3);margin-bottom:10px">Jatah cuti per tahun (hari)</div>
-    <input id="jatah-edit-input" type="number" min="1" max="365" style="width:100%;box-sizing:border-box;padding:12px 14px;border-radius:12px;border:1.5px solid var(--bord);background:var(--bg);color:var(--txt);font-size:22px;font-weight:700;font-family:&#39;DM Sans&#39;,system-ui,sans-serif;text-align:center;outline:none;-moz-appearance:textfield;" onkeydown="if(event.key===&#39;Enter&#39;)saveJatahEdit()">
+    <input id="jatah-edit-input" type="number" min="1" max="365"
+      style="width:100%;box-sizing:border-box;padding:12px 14px;border-radius:12px;border:1.5px solid var(--bord);background:var(--bg);color:var(--txt);font-size:22px;font-weight:700;font-family:'DM Sans',system-ui,sans-serif;text-align:center;outline:none;-moz-appearance:textfield;"
+      onkeydown="if(event.key==='Enter')saveJatahEdit()"
+    />
     <div style="display:flex;gap:10px;margin-top:18px">
-      <button onclick="document.getElementById(&#39;jatah-edit-overlay&#39;).style.display=&#39;none&#39;" style="flex:1;padding:12px;border-radius:12px;border:1.5px solid var(--bord);background:var(--bg2);color:var(--txt2);font-size:14px;font-weight:600;cursor:pointer;font-family:&#39;DM Sans&#39;,system-ui,sans-serif;">Batal</button>
-      <button onclick="saveJatahEdit()" style="flex:2;padding:12px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:&#39;DM Sans&#39;,system-ui,sans-serif;">✅ Simpan</button>
+      <button onclick="document.getElementById('jatah-edit-overlay').style.display='none'" style="flex:1;padding:12px;border-radius:12px;border:1.5px solid var(--bord);background:var(--bg2);color:var(--txt2);font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',system-ui,sans-serif;">Batal</button>
+      <button onclick="saveJatahEdit()" style="flex:2;padding:12px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',system-ui,sans-serif;">✅ Simpan</button>
     </div>
   </div>
 </div>
@@ -2475,6 +2453,5 @@ self.addEventListener('fetch',e=>{
   }
 
 </script>
-
-
-</div></body></html>
+</body>
+</html>
