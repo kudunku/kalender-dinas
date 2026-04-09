@@ -10,7 +10,7 @@
    COLOR THEMES — set on <html data-color>
 ══════════════════════════════════════ */
 [data-color="sky"] {
-  --acc-rgb:91,159,192;
+  --acc-rgb:91,159,192; --bg-rgb:244,247,250;
   --pagi:#5b9fc0;  --pagi-l:#eef6fb;  --pagi-m:#b8d9ed;
   --acc:#5b9fc0;   --acc2:#4a8fb0;
   --bg:#f4f7fa;    --bg2:#e8eef4;     --surf:#fafcff;   --surf2:#eef3f8;
@@ -25,7 +25,7 @@
   --sh:0 2px 16px rgba(30,45,58,.06); --sh2:0 8px 36px rgba(30,45,58,.11); --sh3:0 24px 64px rgba(30,45,58,.15);
 }
 [data-color="sage"] {
-  --acc-rgb:122,158,126;
+  --acc-rgb:122,158,126; --bg-rgb:245,247,243;
   --pagi:#7a9e7e;  --pagi-l:#f0f5f0;  --pagi-m:#c8ddc9;
   --acc:#7a9e7e;   --acc2:#6a8e6e;
   --bg:#f5f7f3;    --bg2:#e8ede5;     --surf:#fafdf9;   --surf2:#eef3eb;
@@ -40,7 +40,7 @@
   --sh:0 2px 16px rgba(30,45,30,.06); --sh2:0 8px 36px rgba(30,45,30,.11); --sh3:0 24px 64px rgba(30,45,30,.15);
 }
 [data-color="rose"] {
-  --acc-rgb:196,127,138;
+  --acc-rgb:196,127,138; --bg-rgb:250,245,246;
   --pagi:#c47f8a;  --pagi-l:#fdf0f2;  --pagi-m:#edccd0;
   --acc:#c47f8a;   --acc2:#b46a78;
   --bg:#faf5f6;    --bg2:#f2e8ea;     --surf:#fffafe;   --surf2:#f8eef0;
@@ -55,7 +55,7 @@
   --sh:0 2px 16px rgba(45,30,34,.06); --sh2:0 8px 36px rgba(45,30,34,.11); --sh3:0 24px 64px rgba(45,30,34,.15);
 }
 [data-color="lavender"] {
-  --acc-rgb:139,120,196;
+  --acc-rgb:139,120,196; --bg-rgb:246,245,250;
   --pagi:#8b78c4;  --pagi-l:#f2f0fb;  --pagi-m:#cdc5ec;
   --acc:#8b78c4;   --acc2:#7a68b4;
   --bg:#f6f5fa;    --bg2:#eceaf4;     --surf:#fbfaff;   --surf2:#f0eef8;
@@ -70,7 +70,7 @@
   --sh:0 2px 16px rgba(30,26,48,.06); --sh2:0 8px 36px rgba(30,26,48,.11); --sh3:0 24px 64px rgba(30,26,48,.15);
 }
 [data-color="terra"] {
-  --acc-rgb:184,106,66;
+  --acc-rgb:184,106,66; --bg-rgb:250,245,241;
   --pagi:#b86a42;  --pagi-l:#faf2ee;  --pagi-m:#e8c4b0;
   --acc:#b86a42;   --acc2:#a85a32;
   --bg:#faf5f1;    --bg2:#f0e8e0;     --surf:#fffdfb;   --surf2:#f5ede6;
@@ -88,6 +88,7 @@
 /* ══ DARK MODE ══ */
 [data-mode="dark"] {
   --bg:#16181e !important; --bg2:#1e2028 !important; --surf:#252830 !important; --surf2:#2e3140 !important;
+  --bg-rgb:22,24,30 !important;
   --bord:#383c50 !important; --bord2:#484d64 !important;
   --txt:#e8eaf8 !important; --txt2:#8890b8 !important; --txt3:#505878 !important;
   --sh:0 2px 16px rgba(0,0,0,.22) !important; --sh2:0 8px 36px rgba(0,0,0,.32) !important; --sh3:0 24px 64px rgba(0,0,0,.42) !important;
@@ -228,6 +229,7 @@ body {
 
 /* ── Card ── */
 .card { background:var(--surf); border:1.5px solid var(--bord); border-radius:var(--r); box-shadow:var(--sh); overflow:hidden; transition:background .3s,border-color .3s,box-shadow .2s; margin-bottom:14px; }
+.side-panel { margin-top: 20px; }
 .card:hover { box-shadow:var(--sh2); }
 .card-hd { display:flex; align-items:center; justify-content:space-between; padding:16px 20px; cursor:pointer; user-select:none; border-bottom:1.5px solid transparent; transition:border-color .2s; }
 .card-hd.open { border-color:var(--bord); }
@@ -289,7 +291,8 @@ body {
 .swap-b { position:absolute; top:4px; right:5px; font-size:9px; color:var(--malam); font-weight:700; }
 
 /* ── Legend ── */
-.legend { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; padding:16px 18px; background:var(--surf); border:1.5px solid var(--bord); border-radius:var(--r); box-shadow:var(--sh);  }
+.legend { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; padding:16px 18px; background:var(--surf); border:1.5px solid var(--bord); border-radius:var(--r); box-shadow:var(--sh)
+      ;  }
 .leg-i { display:flex; align-items:center; gap:5px; font-size:11px; color:var(--txt2); font-weight:500; }
 .leg-d { width:9px; height:9px; border-radius:50%; }
 
@@ -962,6 +965,7 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
     scrollbar-color: var(--bord2) transparent;
     padding-right: 4px;
     padding-bottom: 20px;
+    margin-top: 0;
   }
   .side-panel::-webkit-scrollbar { width: 4px; }
   .side-panel::-webkit-scrollbar-track { background: transparent; }
@@ -1030,7 +1034,7 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
     </div>
   </div>
 
-  <div id="export-area" style="background:var(--bg,#f4f6f9);padding:16px 0 8px">
+  <div id="export-area" style="background:rgba(var(--bg-rgb,244,247,250),0.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:16px 0 0;border-radius:20px;border:1.5px solid var(--bord)">
 
   <!-- Banner judul khusus screenshot (hanya muncul saat export) -->
   <div class="export-title-banner" id="export-title-banner">
