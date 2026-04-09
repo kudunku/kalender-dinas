@@ -1248,16 +1248,7 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
           </div>
           <button class="btn primary" onclick="addLemburManual()" style="padding:10px 16px;border-radius:10px;flex-shrink:0">+ Tambah</button>
         </div>
-        <div id="lembur-list"><div class="lembur-period">Periode: 21 Maret – 20 April 2026</div><div class="lembur-total-box">
-      <div class="lt-label">Total Jam Lembur</div>
-      <div class="lt-val">9 <span style="font-size:16px;opacity:.8">jam</span></div>
-      <div class="lt-sub">1 hari lembur</div>
-    </div><div class="lembur-item">
-        <div class="lembur-dot"></div>
-        <div style="flex:1;font-size:12px"><b>8 April</b> <span style="color:var(--txt3)">Lepas</span></div>
-        <div style="font-size:13px;font-weight:700;color:var(--acc)">⚡ 9 jam</div>
-        <button class="btn sm danger" onclick="setLemburDirect(8,3,2026,0)" style="margin-left:6px">✕</button>
-      </div></div>
+        <div id="lembur-list"></div>
       </div>
     </div>
   </div>
@@ -1453,7 +1444,7 @@ function getMS(){
   const k=key(curY,curM);
   if(!monthState[k]){
     const karya=[];
-    monthState[k]={karyawan:karya,saved:new Set(),swaps:{},cudak:new Set()};
+    monthState[k]={karyawan:karya,saved:new Set(),swaps:{},cudak:new Set(),lembur:{}};
   }
   return monthState[k];
 }
