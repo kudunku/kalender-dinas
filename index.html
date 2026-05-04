@@ -1454,7 +1454,6 @@ function getShift(y,m,d){
   const ms=getMS();
   if(ms.swaps&&ms.swaps[d]) return ms.swaps[d];
   if(ms.cudak&&ms.cudak.has(d)) return 'CUDAK';
-  // permSwaps per bulan (bisa dibatalkan)
   if(ms.permSwaps&&ms.permSwaps.length){
     let best=-Infinity,ov=null;
     ms.permSwaps.forEach(ps=>{
@@ -1462,9 +1461,6 @@ function getShift(y,m,d){
     });
     if(ov!==null) return CYCLE[ov];
   }
-  let ov=null,best=-Infinity;
-  permShifts.forEach(ps=>{const pd=daysSince(ps.fy,ps.fm,ps.fd),td=daysSince(y,m,d);if(td>=pd&&pd>best){best=pd;ov=((ps.newPos+(td-pd))%8+8)%8}});
-  if(ov!==null) return CYCLE[ov];
   return CYCLE[basePosAt(y,m,d)];
 }
 function dim(y,m){return new Date(y,m+1,0).getDate()}
@@ -1654,15 +1650,12 @@ function renderSwList(){
   Object.entries(ms.swaps||{}).forEach(([d,sh])=>items.push({d:+d,label:`Tgl ${d}: ${EMOJ[sh]} ${sh}`,type:'sehari',did:+d}));
   (ms.cudak||new Set()).forEach(d=>items.push({d,label:`Tgl ${d}: 🌸 CUDAK`,type:'cudak',did:d}));
   (ms.permSwaps||[]).forEach(p=>items.push({d:p.fd,label:`Mulai tgl ${p.fd}: → ${EMOJ[CYCLE[p.newPos]]||''} ${CYCLE[p.newPos]} (bulan ini)`,type:'perm',did:p.fd}));
-  // permShifts global (lama) — tampilkan tanpa cancel jika masih ada
-  permShifts.filter(p=>p.fy===curY&&p.fm===curM).forEach(p=>items.push({d:p.fd,label:`Mulai tgl ${p.fd}: → ${EMOJ[CYCLE[p.newPos]]||''} ${CYCLE[p.newPos]} ⚠️ Permanen`,type:'permglobal'}));
   items.sort((a,b)=>a.d-b.d);
   const el=document.getElementById('sw-list');
   if(!items.length){el.innerHTML='<div class="empty-txt">Belum ada perubahan jadwal.</div>';return;}
   el.innerHTML=items.map(it=>{
-    const label=it.type==='sehari'?'Sehari':it.type==='cudak'?'CUDAK':it.type==='perm'?'Ubah Pola':'Permanen';
-    const canDel=it.type!=='permglobal';
-    return`<div class="sw-item"><span class="sw-badge ${it.type==='perm'?'sehari':it.type}">${label}</span><span style="flex:1;font-size:11px">${it.label}</span>${canDel?`<button class="btn sm danger" onclick="removeSwap('${it.type}',${it.did})">✕</button>`:''}</div>`;
+    const label=it.type==='sehari'?'Sehari':it.type==='cudak'?'CUDAK':'Ubah Pola';
+    return`<div class="sw-item"><span class="sw-badge ${it.type==='perm'?'sehari':it.type}">${label}</span><span style="flex:1;font-size:11px">${it.label}</span><button class="btn sm danger" onclick="removeSwap('${it.type}',${it.did})">✕</button></div>`;
   }).join('');
 }
 function renderLegend(){
@@ -2445,7 +2438,23 @@ function saveLocal(){
         });
         monthState=ms;
       }
-      if(data.permShifts) permShifts=JSON.parse(data.permShifts);
+      // Migrasi permShifts lama → permSwaps per bulan (bisa dibatalkan)
+      if(data.permShifts){
+        try{
+          const oldPerms=JSON.parse(data.permShifts);
+          oldPerms.forEach(ps=>{
+            const k2=ps.fy+'-'+ps.fm;
+            if(!monthState[k2]){
+              monthState[k2]={karyawan:[],saved:new Set(),swaps:{},cudak:new Set(),lembur:{},permSwaps:[]};
+            }
+            if(!monthState[k2].permSwaps) monthState[k2].permSwaps=[];
+            if(!monthState[k2].permSwaps.find(x=>x.fd===ps.fd)){
+              monthState[k2].permSwaps.push({fd:ps.fd,newPos:ps.newPos});
+            }
+          });
+        }catch(e2){}
+      }
+      permShifts=[];
       if(data.currentColor) setColor(data.currentColor);
       if(data.allowBareng!==undefined){
         allowBareng=data.allowBareng;
