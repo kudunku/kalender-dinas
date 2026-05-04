@@ -1170,11 +1170,11 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
   </div>
 
   <div class="card">
-    <div class="card-hd open" onclick="toggleCard(&#39;swap-b&#39;,&#39;swap-c&#39;)">
+    <div class="card-hd" onclick="toggleCard(&#39;swap-b&#39;,&#39;swap-c&#39;)">
       <div class="card-hd-l"><div class="card-icon" style="background:var(--lepas-l)">🔄</div><div class="card-title">Tukar / Ganti Jadwal</div></div>
-      <span class="chev open" id="swap-c">▼</span>
+      <span class="chev" id="swap-c">▼</span>
     </div>
-    <div class="collapse open" id="swap-b">
+    <div class="collapse" id="swap-b">
       <div class="card-body">
         <div class="radio-tabs">
           <div class="rtab active" id="stab1" onclick="setSwapMode(&#39;sehari&#39;)">Sehari</div>
@@ -1202,7 +1202,7 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
           <button class="btn prp w100" onclick="addCudak()">🌸 Tandai CUDAK</button>
         </div>
         <div id="sw-perm" style="display:none">
-          <p style="font-size:11px;color:var(--txt3);margin-bottom:12px">Mulai tanggal ini, siklus bergeser permanen.</p>
+          <p style="font-size:11px;color:var(--txt3);margin-bottom:12px">Mulai tanggal ini, siklus bergeser untuk bulan ini saja. Bisa dibatalkan.</p>
           <div class="two-col">
             <div class="fgrp"><div class="flabel">Mulai tanggal</div><input class="inp" type="number" id="sw3-tgl" min="1" max="31" placeholder="Tgl" oninput="previewPerm()"></div>
             <div class="fgrp"><div class="flabel">Jadi shift</div>
@@ -1215,7 +1215,7 @@ select.inp { appearance:none; cursor:pointer; background-image:url("data:image/s
             </div>
           </div>
           <div class="pola-pv" id="perm-pv"></div>
-          <button class="btn sec w100" onclick="addSwapPerm()" style="margin-top:10px">Terapkan Permanen</button>
+          <button class="btn sec w100" onclick="addSwapPerm()" style="margin-top:10px">Terapkan Bulan Ini</button>
         </div>
         <div class="sw-list" id="sw-list"><div class="empty-txt">Belum ada perubahan jadwal.</div></div>
       </div>
@@ -1454,6 +1454,14 @@ function getShift(y,m,d){
   const ms=getMS();
   if(ms.swaps&&ms.swaps[d]) return ms.swaps[d];
   if(ms.cudak&&ms.cudak.has(d)) return 'CUDAK';
+  // permSwaps per bulan (bisa dibatalkan)
+  if(ms.permSwaps&&ms.permSwaps.length){
+    let best=-Infinity,ov=null;
+    ms.permSwaps.forEach(ps=>{
+      if(d>=ps.fd&&ps.fd>best){best=ps.fd;ov=((ps.newPos+(d-ps.fd))%8+8)%8;}
+    });
+    if(ov!==null) return CYCLE[ov];
+  }
   let ov=null,best=-Infinity;
   permShifts.forEach(ps=>{const pd=daysSince(ps.fy,ps.fm,ps.fd),td=daysSince(y,m,d);if(td>=pd&&pd>best){best=pd;ov=((ps.newPos+(td-pd))%8+8)%8}});
   if(ov!==null) return CYCLE[ov];
@@ -1645,11 +1653,17 @@ function renderSwList(){
   const ms=getMS(),items=[];
   Object.entries(ms.swaps||{}).forEach(([d,sh])=>items.push({d:+d,label:`Tgl ${d}: ${EMOJ[sh]} ${sh}`,type:'sehari',did:+d}));
   (ms.cudak||new Set()).forEach(d=>items.push({d,label:`Tgl ${d}: 🌸 CUDAK`,type:'cudak',did:d}));
-  permShifts.filter(p=>p.fy===curY&&p.fm===curM).forEach(p=>items.push({d:p.fd,label:`Mulai tgl ${p.fd}: → ${EMOJ[CYCLE[p.newPos]]||''} ${CYCLE[p.newPos]}`,type:'perm'}));
+  (ms.permSwaps||[]).forEach(p=>items.push({d:p.fd,label:`Mulai tgl ${p.fd}: → ${EMOJ[CYCLE[p.newPos]]||''} ${CYCLE[p.newPos]} (bulan ini)`,type:'perm',did:p.fd}));
+  // permShifts global (lama) — tampilkan tanpa cancel jika masih ada
+  permShifts.filter(p=>p.fy===curY&&p.fm===curM).forEach(p=>items.push({d:p.fd,label:`Mulai tgl ${p.fd}: → ${EMOJ[CYCLE[p.newPos]]||''} ${CYCLE[p.newPos]} ⚠️ Permanen`,type:'permglobal'}));
   items.sort((a,b)=>a.d-b.d);
   const el=document.getElementById('sw-list');
   if(!items.length){el.innerHTML='<div class="empty-txt">Belum ada perubahan jadwal.</div>';return;}
-  el.innerHTML=items.map(it=>`<div class="sw-item"><span class="sw-badge ${it.type}">${it.type==='sehari'?'Sehari':it.type==='cudak'?'CUDAK':'Permanen'}</span><span style="flex:1;font-size:11px">${it.label}</span>${it.type!=='perm'?`<button class="btn sm danger" onclick="removeSwap('${it.type}',${it.did})">✕</button>`:''}</div>`).join('');
+  el.innerHTML=items.map(it=>{
+    const label=it.type==='sehari'?'Sehari':it.type==='cudak'?'CUDAK':it.type==='perm'?'Ubah Pola':'Permanen';
+    const canDel=it.type!=='permglobal';
+    return`<div class="sw-item"><span class="sw-badge ${it.type==='perm'?'sehari':it.type}">${label}</span><span style="flex:1;font-size:11px">${it.label}</span>${canDel?`<button class="btn sm danger" onclick="removeSwap('${it.type}',${it.did})">✕</button>`:''}</div>`;
+  }).join('');
 }
 function renderLegend(){
   const karya=getMS().karyawan;
@@ -1928,9 +1942,26 @@ function addCudak(){
 function addSwapPerm(){
   const d=parseInt(document.getElementById('sw3-tgl').value),newPos=parseInt(document.getElementById('sw3-sh').value);
   if(!d||d<1||d>dim(curY,curM)){showToast('⚠️ Tanggal tidak valid!');return;}
-  permShifts.push({fy:curY,fm:curM,fd:d,newPos});document.getElementById('sw3-tgl').value='';document.getElementById('perm-pv').classList.remove('vis');showToast(`✅ Pola berubah permanen mulai tgl ${d}`);render();
+  const ms=getMS();
+  if(!ms.permSwaps) ms.permSwaps=[];
+  // Hapus permSwap lama yang mulai di tgl yg sama (overwrite)
+  ms.permSwaps=ms.permSwaps.filter(p=>p.fd!==d);
+  ms.permSwaps.push({fd:d,newPos});
+  document.getElementById('sw3-tgl').value='';
+  document.getElementById('perm-pv').classList.remove('vis');
+  showToast(`✅ Pola bergeser mulai tgl ${d} (bulan ini)`);
+  render();
 }
-function removeSwap(type,d){const ms=getMS();if(type==='sehari'&&ms.swaps)delete ms.swaps[+d];else if(type==='cudak'&&ms.cudak)ms.cudak.delete(+d);render();}
+function removeSwap(type,d){
+  const ms=getMS();
+  if(type==='sehari'&&ms.swaps) delete ms.swaps[+d];
+  else if(type==='cudak'&&ms.cudak) ms.cudak.delete(+d);
+  else if(type==='perm'&&ms.permSwaps){
+    ms.permSwaps=ms.permSwaps.filter(p=>p.fd!==+d);
+    showToast(`↩️ Ubah pola mulai tgl ${d} dibatalkan`);
+  }
+  render();
+}
 function previewPerm(){
   const d=parseInt(document.getElementById('sw3-tgl').value),newPos=parseInt(document.getElementById('sw3-sh').value),el=document.getElementById('perm-pv');
   if(!d||d<1||d>dim(curY,curM)){el.classList.remove('vis');return;}
@@ -2409,6 +2440,7 @@ function saveLocal(){
           ms[k].saved=new Set(ms[k].saved||[]);
           ms[k].cudak=new Set(ms[k].cudak||[]);
           ms[k].lembur=ms[k].lembur||{};
+          ms[k].permSwaps=ms[k].permSwaps||[];
           ms[k].karyawan=(ms[k].karyawan||[]).map(x=>({...x,dates:x.dates||[],maybes:x.maybes||[]}));
         });
         monthState=ms;
